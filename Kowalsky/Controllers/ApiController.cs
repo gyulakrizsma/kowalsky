@@ -1,40 +1,35 @@
-﻿using System.Collections.Generic;
+﻿using Kowalsky.Controllers.Dtos;
+using Kowalsky.Controllers.Sanitizers;
+using Kowalsky.Services;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Kowalsky.Controllers
 {
     [Route("api/home")]
     public class ApiController : Controller
     {
-        // GET: api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly IHomeSanitizer _sanitizer;
+        private readonly IEmailSenderService _emailSenderService;
+
+        public ApiController(IHomeSanitizer sanitizer, IEmailSenderService emailSenderService)
         {
-            return new string[] { "value1", "value2" };
+            _sanitizer = sanitizer;
+            _emailSenderService = emailSenderService;
         }
 
         [HttpPost]
-        public IActionResult Contact([FromBody] ContactInfoDto item)
+        public IActionResult Contact([FromBody] ContactInfoDto dto)
         {
-            if (item == null)
+            if (dto == null)
             {
                 return BadRequest();
             }
 
+            var contactInfo = _sanitizer.SanitizeContactInfo(dto);
+
+            _emailSenderService.SendEmails(contactInfo);
+
             return Ok();
-        }
-
-        public class ContactInfoDto
-        {
-            public string Name { get; set; }
-
-            public string Email { get; set; }
-
-            public string Phone { get; set; }
-
-            public string Comment { get; set; }
         }
     }
 }

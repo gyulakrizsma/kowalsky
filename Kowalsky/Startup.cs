@@ -1,19 +1,39 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Kowalsky.Controllers.Sanitizers;
+using Kowalsky.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Kowalsky
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        public IConfigurationRoot Configuration { get; }
+
+        public Startup(IHostingEnvironment env)
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json");
+
+            Configuration = builder.Build();
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddTransient<IHomeSanitizer, HomeSanitizer>();
+            services.AddTransient<IEmailTemplateService, EmailTemplateService>();
+            
+            services.AddTransient<IEmailSenderService>(
+                service => new EmailSenderService(
+                    new EmailTemplateService(),
+                    Configuration["MailSettings:from"],
+                    Configuration["MailSettings:password"]));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
