@@ -1,0 +1,84 @@
+﻿<section id="register" class="row section-register" data-ng-app="app.register">
+    <div class="col-md-12" data-ng-controller="RegisterController as vm">
+
+        <div class="row register-icon wow fadeIn" data-wow-duration="1.5s">
+            <div class="col-md-12">
+                <i class="glyphicon glyphicon-envelope"></i>
+            </div>
+        </div>
+
+        <div class="row kj-form wow fadeIn" data-wow-duration="1.5s">
+            <div class="col-md-12">
+                <form role="form" 
+                      class="form-horizontal" 
+                      id="registerForm" 
+                      name="vm.registerForm" 
+                      ng-hide="vm.hasRegistered">
+                    
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="name" 
+                                   placeholder="Név" 
+                                   required 
+                                   data-ng-model="vm.ContactInfo.Name"/>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" 
+                                   class="form-control" 
+                                   id="email" 
+                                   name="email" 
+                                   placeholder="E-Mail cím" 
+                                   required
+                                   data-ng-model="vm.ContactInfo.Email"/>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <input type="text" 
+                                   class="form-control" 
+                                   placeholder="Telefonszám (+36301111111)" 
+                                   required 
+                                   data-ng-blur="vm.focusoutphone()" 
+                                   data-ng-model="vm.ContactInfo.Phone"/>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <textarea class="form-control" 
+                                      placeholder="Megjegyzés" 
+                                      data-ng-model="vm.ContactInfo.Comment"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-lg kj-submit" data-ng-disabled="vm.registerForm.$invalid" data-ng-click="vm.save()">Jelentkezés</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="row" ng-show="vm.hasRegistered">
+                    <div class="col-md-12">
+                        <div class="alert success-kj">
+                            <span>Köszönjük a jelentkezését. Rövidesen hallani fog rólunk!</span>
+                        </div>  
+                    </div>
+                </div>
+                
+                <div class="row" ng-show="!vm.hasRegistered">
+                    <div class="col-md-12">
+                        <div id="error" class="alert alert-danger alert-kj ng-cloak" style="display: none;">
+                            <span>Sajnos probléma lépett fel a jelentkezés során. Kérem próbálja újra.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="loader"></div>
+            </div>
+        </div>
+    </div>
+</section>

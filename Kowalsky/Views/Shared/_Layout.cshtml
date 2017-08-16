@@ -1,0 +1,110 @@
+﻿<html>
+<head>
+    <title>Krizsmajogsi</title>
+    <link rel="icon" href="~/images/favicon.ico">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+
+    <environment names="Development">
+        <link href="http://fonts.googleapis.com/css?subset=latin,latin-ext&family=Roboto:100,300,100italic,400,300italic" rel="stylesheet" type="text/css">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+        <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+        <link href="~/lib/owl-carousel/owl-carousel/owl.carousel.css" rel="stylesheet"/>
+        <link href="~/lib/owl-carousel/owl-carousel/owl.transitions.css" rel="stylesheet"/>
+        <link href="~/lib/owl-carousel/owl-carousel/owl.theme.css" rel="stylesheet"/>
+        <link href="~/lib/nivo-lightbox/nivo-lightbox.css" rel="stylesheet"/>
+        <link href="~/lib/nivo-lightbox/themes/default/default.css" rel="stylesheet"/>
+        <link href="~/lib/wow/css/libs/animate.css" rel="stylesheet"/>
+        <link href="~/lib/bootstrap-social/bootstrap-social.css" rel="stylesheet"/>
+        <link href="~/css/app.css" rel="stylesheet"/>
+    </environment>
+    
+    <environment names="Production">
+        <link href="http://fonts.googleapis.com/css?subset=latin,latin-ext&family=Roboto:100,300,100italic,400,300italic" rel="stylesheet" type="text/css">
+        <link href="/css/app.min.css" rel="stylesheet"/>
+    </environment>
+</head>
+<body>
+
+<header>
+
+    <nav class="kg-navigation nav-animate-out navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a href="#home" class="navbar-brand"><img src="~/images/home/car.png" width="40" /></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="kj-yellow"><a href="#schedule">Időpontok</a></li>
+                    <li class="kj-green"><a href="#prices">Árak</a></li>
+                    <li class="kj-yellow"><a href="#comment">Értékelések</a></li>
+                    <li class="kj-green"><a href="#images">Képek</a></li>
+                    <li class="kj-yellow"><a href="#discounts">Kedvezmények</a></li>
+                    <li class="kj-green"><a href="#about">Magunkról</a></li>
+                    <li class="kj-yellow"><a href="#contact">Kapcsolat</a></li>
+                    <li class="kj-green"><a href="#register">Jelentkezés</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+</header>
+
+<div class="container-fluid">
+    @RenderBody()    
+</div>
+
+<footer>
+    <div class="row">
+        <div class="col-md-12">
+            <ul>
+                <li><a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/Krizsmajogsi/timeline" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="btn btn-social-icon btn-twitter" href="https://twitter.com/krizsmajogsi" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="btn btn-social-icon btn-google-pus" href="https://plus.google.com/101848592558265257231/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+    
+<environment names="Development">
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/smoothscroll/dist/smoothscroll.js"></script>
+    <script src="~/lib/jquery.scrollTo/jquery.scrollTo.js"></script>
+    <script src="~/lib/jquery-one-page-nav/jquery.nav.js"></script>
+    <script src="~/lib/owl-carousel/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/lib/jquery.stellar/jquery.stellar.js"></script>
+    <script src="~/lib/nivo-lightbox/nivo-lightbox.js"></script>
+    <script src="~/lib/wow/dist/wow.js"></script>
+    <script type="text/javascript" src="~/js/googleMap.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwb_OzjSncay_deJnaxIAYFawJw69qYG4&callback=initializeMap"></script>
+    <script src="~/lib/angular/angular.js"></script>
+
+    <script src="~/js/home.js"></script>
+
+    <script src="~/js/client/app/app.types.js"></script>
+    <script src="~/js/client/app/register/register.module.js"></script>
+    <script src="~/js/client/app/register/register.services.js"></script>
+    <script src="~/js/client/app/register/registerController.js"></script>
+</environment>
+
+<environment names="Production">
+    <script type="text/javascript" src="~/js/googleMap.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwb_OzjSncay_deJnaxIAYFawJw69qYG4&callback=initializeMap"></script>
+    <script src="~/js/app.min.js" text="text/javascript"></script>
+</environment>
+
+@RenderSection("scripts", required: false)
+</body>
+</html>

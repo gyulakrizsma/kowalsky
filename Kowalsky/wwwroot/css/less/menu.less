@@ -1,0 +1,140 @@
+﻿header {
+
+    nav {
+        &.navbar {
+            &.navbar-default {
+                background: @kj-green;
+                border-color: @kj-green;
+
+                .navbar-toggle {
+                    background-color: white;
+
+                    &.icon-bar {
+                        background-color: white;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        background-color: inherit;
+                    }
+                }
+
+                &.background-yellow {
+                    background: @kj-yellow;
+                    border-color: @kj-yellow;
+                    transition: all 0.3s ease 0s;
+                }
+
+                &.background-green {
+                    background: @kj-green;
+                    border-color: @kj-green;
+                    transition: all 0.3s ease 0s;
+                }
+            }
+        }
+    }
+
+    .nav-animate-in {
+        opacity: 1;
+        transition: all 0.3s ease 0s;
+    }
+
+    .nav-animate-out {
+        opacity: 0;
+        transition: all 0.3s ease 0s;
+
+        a {
+            cursor: default;
+        }
+    }
+
+    ul {
+        &.nav {
+            &.navbar-nav {
+                &.navbar-left {
+                    a {
+                        font-size: 18px;
+                        color: white;
+                        text-transform: uppercase;
+                    }
+                }
+
+                &.navbar-right {
+                    margin-top: 3px;
+
+                    a {
+                        color: white;
+                        text-transform: uppercase;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        li {
+            &.current {
+                a {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 994px) {
+
+    header {
+        nav {
+            ul {
+                &.nav {
+                    li {
+                        a {
+                            padding: 10px 10px;
+                        }
+                    }
+                }
+            }
+
+            .navbar-header {
+                width: 100%;
+            }
+
+            .navbar-brand {
+                img {
+                    display: inline;
+                }
+            }
+
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    header {
+        nav {
+            ul {
+                &.nav {
+                    li {
+                        display: inline-block;
+
+                        a {
+                            padding: 10px 10px;
+                        }
+                    }
+                }
+            }
+
+            .navbar-header {
+                width: auto;
+            }
+
+            .navbar-brand {
+                img {
+                    display: block;
+                }
+            }
+        }
+    }
+}

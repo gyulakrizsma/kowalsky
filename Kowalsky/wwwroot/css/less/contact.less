@@ -1,0 +1,38 @@
+﻿.section-contact {
+
+    .line-yellow {
+        margin: 0;
+    }
+
+    .contact-info {
+
+        span {
+            &.info {
+                color: @kj-yellow;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: @kj-yellow;
+
+            &:hover {
+                text-decoration: underline;
+                color: @kj-yellow;
+            }
+        }
+    }
+
+    .yellow-shadow {
+        box-shadow: 0 0 20px @kj-yellow;
+    }
+}
+
+@media (max-width: 994px) {
+
+    .section-contact {
+        .contact-info {
+            margin-bottom: 40px;
+        }
+    }
+}

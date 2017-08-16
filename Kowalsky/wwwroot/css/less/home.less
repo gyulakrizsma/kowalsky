@@ -1,0 +1,73 @@
+﻿.section-home {
+    background: url('/images/home/first.jpg') no-repeat;
+    background-size: cover;
+    min-height: 100%;
+
+    .section-home-cont {
+        padding-top: 100px;
+        color: white;
+
+        .row {
+            margin-top: 50px;
+
+            h1 {
+                font-size: 50px;
+                font-weight: 300;
+                margin-bottom: 50px;
+            }
+
+            h5 {
+                font-size: 30px;
+                font-weight: 300;
+                line-height: 1.4em;
+            }
+        }
+
+        .btn-online {
+            margin-top: 50px;
+
+            i {
+                &.glyphicon {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .kj-main-price,
+    .kj-education {
+        border: none;
+        border-radius: 3px;
+        color: white;
+        font-weight: 400;
+        padding: 15px 35px;
+        min-width: 250px;
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+            border-radius: 20px;
+            color: white;
+        }
+    }
+
+    .kj-main-price {
+        background: @kj-green;
+
+        &:hover {
+            background: @kj-yellow;
+        }
+    }
+
+    .kj-education {
+        background: @kj-yellow;
+
+        &:hover {
+            background: @kj-green;
+        }
+    }
+
+    .dark-overlay {
+        min-height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+    }
+}

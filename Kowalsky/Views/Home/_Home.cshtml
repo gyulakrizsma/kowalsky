@@ -1,0 +1,65 @@
+﻿@using System.Globalization
+@using System.Threading.Tasks
+@model int
+
+<section id="home" class="row section-home" data-stellar-background-ratio="0.5" style="background-position: 50% 0;">
+    
+    <div class="col-md-12">
+        
+        <div class="row dark-overlay">
+            
+            <div class="col-md-12">
+
+                <div class="row section-home-cont">
+                    <div class="col-md-12">
+                        
+                        <div class="row navbar">
+                            <div class="col-md-12">
+                                <img src="~/images/home/car.png" width="400"/>
+                            </div>
+                        </div>
+                        
+                                
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>Üdvözöllek a Krizsmajogsi weboldalán!</h1>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5>Jelentkezz az E-learning képzésre, így otthonról végezheted el az elméleti részt!</h5>
+
+                                <div class="btn-online">
+                                    <a href="#register" id="btnEducation" class="btn btn-default btn-lg kj-education" href="">
+                                        <i class="glyphicon glyphicon-education"></i>
+                                        <span class="text">E-LEARNING</span>
+                                        <span class="registerOnlineText hide">Jelentkezz Online</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5>Elméleti okatás, és a megszokott 30 óra gyakorlat most</h5>
+
+                                <div class="btn-online">
+                                    <a href="#register" id="btnOnline" class="btn btn-default btn-lg kj-main-price" href="">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                        <span class="mainPrice">@Model.ToString("n0", new CultureInfo("hu-HU")) FT</span>
+                                        <span class="registerOnlineText hide">Jelentkezz Online</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</section>

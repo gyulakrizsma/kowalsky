@@ -1,0 +1,70 @@
+﻿@using System.Collections.Generic
+@using System.Globalization
+@using System.Linq
+@using Kowalsky.Models
+@model IReadOnlyCollection<Schedule>
+
+@{
+    var ci = new CultureInfo("hu-HU");
+    var timeColumns = Model != null && Model.Any() ? 12/Model.Count() : 0;
+}
+
+<section id="schedule" class="row section-schedule">
+    <div class="col-md-12">
+        <div class="row wow fadeIn" data-wow-duration="1.5s" data-wow-offset="10">
+            <div class="col-md-12">
+                <h2 class="section-title">Időpontok</h2>
+                <div class="line-yellow"></div>
+                <div class="short-text">Itt megtekintheti hogy mikor indulnak előadásaink</div>
+                <div class="line-yellow"></div>
+                <div class="under-line-padding">
+                    A tanfolyamok egységesen 17:00-20:30-ig tartanak.<br/>
+                    Igény szerint délelőtti illetve hétvégei tanfolyamot is indítunk
+                    Amennyiben egy időpont betelt, párhuzamosan újabb tanfolyamot indítunk.<br/>
+                </div>    
+            </div>
+        </div>
+
+        <div class="time-box-list row margin-lg wow bounceIn" data-wow-duration="1.5s" data-wow-offset="10">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-md-@timeColumns col-sd-@timeColumns">
+                    <div class="row time-box">
+                        <div class="col-md-12">
+                            <h3 class="kj-yellow">@item.FirstDay.ToString("MMMM", ci).ToUpper()</h3>
+                            <div class="kj-time">@item.FirstDay.Day</div>
+                            <ul class="kj-time-list">
+                                @if (item.SecondDay.HasValue)
+                                {
+                                    <li><span class="kj-yellow glyphicon glyphicon-calendar"></span><span class="time-text">@item.SecondDay.Value.Day</span></li>
+                                }
+                                @if (item.ThirdDay.HasValue)
+                                {
+                                    <li><span class="kj-yellow glyphicon glyphicon-calendar"></span><span class="time-text">@item.ThirdDay.Value.Day</span></li>
+                                }
+                                @if (item.FourthDay.HasValue)
+                                {
+                                    <li><span class="kj-yellow glyphicon glyphicon-calendar"></span><span class="time-text">@item.FourthDay.Value.Day</span></li>
+                                }
+                                @if (item.FifthDay.HasValue)
+                                {
+                                    <li><span class="kj-yellow glyphicon glyphicon-calendar"></span><span class="time-text">@item.FifthDay.Value.Day</span></li>
+                                }
+                                @if (item.SixthDay.HasValue)
+                                {
+                                    <li><span class="kj-yellow glyphicon glyphicon-calendar"></span><span class="time-text">@item.SixthDay.Value.Day</span></li>
+                                }
+                                @if (item.SeventhDay.HasValue)
+                                {
+                                    <li><span class="kj-yellow glyphicon glyphicon-calendar"></span><span class="time-text">@item.SeventhDay.Value.Day</span></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>

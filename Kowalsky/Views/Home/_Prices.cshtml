@@ -1,0 +1,60 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+@using Kowalsky.Models
+@model IReadOnlyCollection<Price>
+
+<section id="prices" class="row section-price">
+    <div class="col-md-12">
+        <div class="row wow fadeIn" data-wow-duration="1.5s" data-wow-offset="10">
+            <div class="col-md-12">
+                <h2 class="section-title">Árak</h2>
+                <div class="line-green"></div>
+                <div class="short-text">Itt megtekintheti az árainkat</div>
+                <div class="line-green"></div>
+                <div class="under-line-padding row">
+                    A jogositvány megszerzéséhez vezető úton több hivatalos akadályt is le kell küzdeni.
+                    Ezek autosiskolától független tényezők, ami azt jelenti, bármelyik iskolát is választod Magyarországon,
+                    ezen a költségeket pluszban vállalnod kell. Iskolánk ahol lehet megkönnyíti neked a hivatalos eljárást,
+                    első útmutatóként lásd az árakat hogy jobban felkészülhess.
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-lg">
+
+            @foreach (var item in Model.Skip(0).Take(2))
+            {
+                <div class="col-md-4 col-sm-4 col-md-offset-1">
+                    <div class="row price-box wow fadeIn" data-wow-duration="1.5s">
+                        <div class="col-md-12">
+                            <h2>@item.Prices Ft</h2>
+                            <h4>@item.Title</h4>
+                            <span>
+                                @item.Description
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        
+        <div class="row margin-lg">
+            @foreach (var item in Model.Skip(2).Take(3))
+            {
+                <div class="col-md-4 col-sm-4">
+                    <div class="row price-box wow slideInLeft" data-wow-duration="0.5s">
+                        <div class="col-md-12">
+                            <h2>@item.Prices Ft</h2>
+                            <h4>@item.Title</h4>
+                            <span>
+                                @item.Description
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</section>

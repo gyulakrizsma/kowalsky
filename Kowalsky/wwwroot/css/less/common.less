@@ -1,0 +1,92 @@
+﻿@kj-green: #00ab66;
+@kj-yellow: #e5c41a;
+@kj-bacground-one: #161616;
+@kj-bacground-two: #232323;
+
+body {
+    text-align: center;
+    background: @kj-bacground-two;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #c8c8c8;
+    line-height: 28px;
+
+    .container-fluid {
+        padding: 0px;
+    }
+
+    a {
+        &:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .margin-lg {
+        margin-top: 50px;
+    }
+
+    .short-text {
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .line-yellow,
+    .line-green {
+        margin: auto;
+        width: 165px;
+        height: 1px;
+    }
+
+    .line-yellow {
+        background: @kj-yellow;
+    }
+
+    .line-green {
+        background: @kj-green;
+    }
+
+    .kj-green {
+        color: @kj-green;
+    }
+
+    .kj-yellow {
+        color: @kj-yellow;
+    }
+
+    .section-schedule,
+    .section-price,
+    .section-comment,
+    .section-picture,
+    .section-discount,
+    .section-about,
+    .section-contact,
+    .section-register {
+        padding-bottom: 130px;
+        padding-top: 50px;
+        max-width: 1200px;
+        margin: auto;
+
+        h2 {
+            text-transform: uppercase;
+            color: white;
+            font-size: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .under-line-padding {
+        padding-top: 40px;
+    }
+
+    .odd {
+        background: @kj-bacground-one;
+    }
+}

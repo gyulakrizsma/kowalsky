@@ -1,0 +1,25 @@
+﻿@using System.Collections.Generic
+@using Kowalsky.Models
+@model IReadOnlyCollection<Comment>
+
+<section id="comment" class="row section-comment">
+    <div class="col-md-12">
+        <div class="row margin-lg">
+            <div id="comments" class="col-md-12 owl-carousel owl-theme">
+                @foreach (var item in Model)
+                {
+                    <div class="row comment-item owl-item">
+                        <div class="col-md-12">
+                            <div class="message">
+                                @item.Message
+                            </div>
+                            <div class="line-yellow"></div>
+                            <div class="name">@item.Name</div>
+                            <div class="title">@item.Description</div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

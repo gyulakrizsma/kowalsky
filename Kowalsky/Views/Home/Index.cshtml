@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@model Kowalsky.Models.HomeOverviewViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_Home", Model.MainPrice)
+    
+@Html.Partial("_Schedules", Model.Schedules)
+    
+<div class="row odd">
+    <div class="col-md-12">
+        @Html.Partial("_Prices", Model.Prices)  
+    </div>
+</div>
+
+@Html.Partial("_Comments", Model.Comments)
+
+<div class="row odd">
+    <div class="col-md-12">
+        @Html.Partial("_Pictures")
+    </div>
+</div>
+
+@Html.Partial("_Discounts")
+
+<div class="row odd">
+    <div class="col-md-12">
+        @Html.Partial("_About")
+    </div>
+</div>
+
+@Html.Partial("_Contact")
+
+<div class="row odd">
+    <div class="col-md-12">
+        @Html.Partial("_Register")
+    </div>
+</div>
