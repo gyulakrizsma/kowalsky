@@ -175,38 +175,33 @@ header ul li.current a {
   font-weight: 300;
   line-height: 1.4em;
 }
-.section-home .section-home-cont .btn-online {
+.section-home .section-home-cont button {
+  border: none;
+  color: white;
+  min-width: 250px;
   margin-top: 50px;
+  padding: 15px 35px;
+  background: #00ab66;
+  transition: background-color 0.3s ease-out;
 }
-.section-home .section-home-cont .btn-online i.glyphicon {
+.section-home .section-home-cont button i.glyphicon {
   margin-right: 5px;
 }
-.section-home .kj-main-price,
-.section-home .kj-education {
-  border: none;
-  border-radius: 3px;
-  color: white;
-  font-weight: 400;
-  padding: 15px 35px;
-  min-width: 250px;
-  transition: all 0.3s ease 0s;
-}
-.section-home .kj-main-price:hover,
-.section-home .kj-education:hover {
-  border-radius: 20px;
-  color: white;
-}
-.section-home .kj-main-price {
-  background: #00ab66;
-}
-.section-home .kj-main-price:hover {
+.section-home .section-home-cont button:hover {
   background: #e5c41a;
 }
-.section-home .kj-education {
-  background: #e5c41a;
+.section-home .section-home-cont button:focus {
+  outline: none;
 }
-.section-home .kj-education:hover {
-  background: #00ab66;
+.section-home .section-home-cont .bounce {
+  position: relative;
+  -moz-animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s infinite;
+}
+.section-home .section-home-cont .bounce a {
+  color: #00ab66;
+  font-size: 35px;
 }
 .section-home .dark-overlay {
   min-height: 100%;

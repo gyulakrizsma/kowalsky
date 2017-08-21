@@ -27,35 +27,21 @@
         effect: 'fadeScale'
     });
 
-    $('#btnOnline').mouseover(function () {
-        $('#btnOnline > .mainPrice').hide();
-        $('#btnOnline > .registerOnlineText').show();
-    });
-
-    $('#btnOnline').mouseout(function () {
-        $('#btnOnline > .registerOnlineText').hide();
-        $('#btnOnline > .mainPrice').show();
-    });
-
-    $('#btnEducation').mouseover(function () {
-        $('#btnEducation > .text').hide();
-        $('#btnEducation > .registerOnlineText').show();
-    });
-
-    $('#btnEducation').mouseout(function () {
-        $('#btnEducation > .registerOnlineText').hide();
-        $('#btnEducation > .text').show();
-    });
-
     var scrollAnimationTime = 1200;
-    $('.navbar-default a, #btnOnline').click(function () {
-        var target = this.hash;
+    $('.navbar-default a, .section-home-cont a').click(function () {
+        scrollTo(this.hash);
+    });
 
+    $('.section-home-cont button').click(function () {
+        var target = '#register';
+        scrollTo(target);
+    });
+
+    function scrollTo(target) {
         $('html, body').stop().animate({
             scrollTop: $(target).offset().top
         }, scrollAnimationTime);
-
-    });
+    }
 
     $('.navbar-right').onePageNav({
         currentClass: 'current',
