@@ -6,6 +6,11 @@
     .section-home-cont {
         padding-top: 100px;
         color: white;
+        height: 100%;
+
+        > div {
+            height: 100%;
+        }
 
         .row {
             margin-top: 50px;
@@ -47,15 +52,27 @@
             }
         }
 
-        .bounce {
-            position: relative;
-            -moz-animation: bounce 3s infinite;
-            -webkit-animation: bounce 3s infinite;
-            animation: bounce 3s infinite;
+        .arrow-down {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            margin-top: 0px;
 
-            a {
-                color: @kj-green;
-                font-size: 35px;
+            .bounce {
+                position: relative;
+                -moz-animation: bounce 3s infinite;
+                -webkit-animation: bounce 3s infinite;
+                animation: bounce 3s infinite;
+
+                a {
+                    color: @kj-green;
+                    font-size: 35px;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
             }
         }
     }

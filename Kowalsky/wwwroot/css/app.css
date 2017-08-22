@@ -161,6 +161,10 @@ header ul li.current a {
 .section-home .section-home-cont {
   padding-top: 100px;
   color: white;
+  height: 100%;
+}
+.section-home .section-home-cont > div {
+  height: 100%;
 }
 .section-home .section-home-cont .row {
   margin-top: 50px;
@@ -193,15 +197,25 @@ header ul li.current a {
 .section-home .section-home-cont button:focus {
   outline: none;
 }
-.section-home .section-home-cont .bounce {
+.section-home .section-home-cont .arrow-down {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  margin-top: 0px;
+}
+.section-home .section-home-cont .arrow-down .bounce {
   position: relative;
   -moz-animation: bounce 3s infinite;
   -webkit-animation: bounce 3s infinite;
   animation: bounce 3s infinite;
 }
-.section-home .section-home-cont .bounce a {
+.section-home .section-home-cont .arrow-down .bounce a {
   color: #00ab66;
   font-size: 35px;
+  text-decoration: none;
+}
+.section-home .section-home-cont .arrow-down .bounce a:hover {
+  text-decoration: none;
 }
 .section-home .dark-overlay {
   min-height: 100%;
