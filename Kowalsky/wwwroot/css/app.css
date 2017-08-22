@@ -45,7 +45,7 @@ body .kj-yellow {
 body .section-schedule,
 body .section-price,
 body .section-comment,
-body .section-picture,
+body .section-gallery,
 body .section-discount,
 body .section-about,
 body .section-contact,
@@ -58,7 +58,7 @@ body .section-register {
 body .section-schedule h2,
 body .section-price h2,
 body .section-comment h2,
-body .section-picture h2,
+body .section-gallery h2,
 body .section-discount h2,
 body .section-about h2,
 body .section-contact h2,
@@ -323,10 +323,10 @@ footer ul li .btn-social-icon:hover {
 .section-comment .comment-item .name {
   padding-top: 30px;
 }
-.section-picture .owl-theme .owl-controls .owl-page span {
+.section-gallery .owl-theme .owl-controls .owl-page span {
   background: #00ab66;
 }
-.section-picture .owl-item div {
+.section-gallery .owl-item div {
   padding: 10px;
 }
 .section-discount .discount-box {
