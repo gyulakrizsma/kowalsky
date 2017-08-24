@@ -28,6 +28,12 @@
     var scrollAnimationTime = 1200;
     $('.navbar-default a, .section-home-cont a').click(function () {
         scrollTo(this.hash);
+
+        var navbarToggle = $('.navbar-toggle');
+
+        if (navbarToggle.is(':visible')) {
+            navbarToggle.click();
+        }
     });
 
     $('.section-home-cont button').click(function () {
@@ -50,16 +56,6 @@
         begin: function () {
         },
         end: function () {
-        },
-        scrollChange: function ($currentListItem) {
-            if ($currentListItem.hasClass('kj-green')) {
-                $('.kg-navigation').removeClass('background-yellow');
-                $('.kg-navigation').addClass('background-green');
-            }
-            else {
-                $('.kg-navigation').removeClass('background-green');
-                $('.kg-navigation').addClass('background-yellow');
-            }
         }
     });
 

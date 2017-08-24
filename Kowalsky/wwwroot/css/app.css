@@ -91,16 +91,6 @@ header nav.navbar.navbar-default .navbar-toggle:hover,
 header nav.navbar.navbar-default .navbar-toggle:focus {
   background-color: inherit;
 }
-header nav.navbar.navbar-default.background-yellow {
-  background: #e5c41a;
-  border-color: #e5c41a;
-  transition: all 0.3s ease 0s;
-}
-header nav.navbar.navbar-default.background-green {
-  background: #00ab66;
-  border-color: #00ab66;
-  transition: all 0.3s ease 0s;
-}
 header .nav-animate-in {
   opacity: 1;
   transition: all 0.3s ease 0s;
@@ -513,7 +503,7 @@ footer ul li .btn-social-icon:hover {
   height: 45px;
 }
 .section-register .kj-form textarea {
-  margin-top: 30px;
+  margin-top: 15px;
   height: 150px;
 }
 .section-register .kj-form input,
