@@ -232,7 +232,10 @@ header ul li.current a {
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
   .section-home .section-home-cont {
-    padding-top: 50px;
+    padding-top: 30px;
+  }
+  .section-home .section-home-cont .row {
+    margin-top: 30px;
   }
   .section-home .section-home-cont .row h1 {
     font-size: 30px;
@@ -250,7 +253,7 @@ header ul li.current a {
     margin-top: 30px;
   }
   .section-home .section-home-cont .arrow-down {
-    top: 85%;
+    top: 80%;
   }
 }
 .section-schedule .time-box-list .time-box {

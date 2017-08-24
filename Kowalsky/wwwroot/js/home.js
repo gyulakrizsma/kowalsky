@@ -26,14 +26,17 @@
     });
 
     var scrollAnimationTime = 1200;
-    $('.navbar-default a, .section-home-cont a').click(function () {
+    $('.navbar-default a').click(function () {
         scrollTo(this.hash);
 
         var navbarToggle = $('.navbar-toggle');
-
         if (navbarToggle.is(':visible')) {
             navbarToggle.click();
         }
+    });
+
+    $('.section-home-cont a').click(function () {
+        scrollTo(this.hash);
     });
 
     $('.section-home-cont button').click(function () {
@@ -52,11 +55,7 @@
         changeHash: false,
         scrollSpeed: 750,
         scrollThreshold: 0.01,
-        scrollOffset: 60,
-        begin: function () {
-        },
-        end: function () {
-        }
+        scrollOffset: 60
     });
 
     $(window).scroll(function () {
