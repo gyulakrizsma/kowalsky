@@ -28,6 +28,10 @@
             }
         }
 
+        img {
+            width: 400px;
+        }
+
         button {
             border: none;
             color: white;
@@ -68,6 +72,8 @@
                     color: @kj-green;
                     font-size: 35px;
                     text-decoration: none;
+                    margin-left: -35px;
+                    width: 0px;
 
                     &:hover {
                         text-decoration: none;
@@ -80,5 +86,42 @@
     .dark-overlay {
         min-height: 100%;
         background: rgba(0, 0, 0, 0.55);
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+    .section-home {
+
+        .section-home-cont {
+            padding-top: 50px;
+
+
+            .row {
+
+                h1 {
+                    font-size: 30px;
+                    margin-bottom: 0px;
+                }
+
+                h5 {
+                    font-size: 22px;
+                    font-weight: 200;
+                    line-height: 1em;
+                }
+            }
+
+            img {
+                width: 200px;
+            }
+
+            button {
+                margin-top: 30px;
+            }
+
+            .arrow-down {
+                top: 85%;
+            }
+        }
     }
 }

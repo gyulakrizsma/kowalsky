@@ -9,32 +9,24 @@
     
 @Html.Partial("_Schedules", Model.Schedules)
     
-<div class="row odd">
-    <div class="col-md-12">
-        @Html.Partial("_Prices", Model.Prices)  
-    </div>
+<div class="odd">
+    @Html.Partial("_Prices", Model.Prices)  
 </div>
 
 @Html.Partial("_Comments", Model.Comments)
 
-<div class="row odd">
-    <div class="col-md-12">
-        @Html.Partial("_Gallery")
-    </div>
+<div class="odd">
+    @Html.Partial("_Gallery")
 </div>
 
 @Html.Partial("_Discounts")
 
-<div class="row odd">
-    <div class="col-md-12">
-        @Html.Partial("_About")
-    </div>
+<div class="odd">
+    @Html.Partial("_About")
 </div>
 
 @Html.Partial("_Contact")
 
-<div class="row odd">
-    <div class="col-md-12">
-        @Html.Partial("_Register")
-    </div>
+<div class="odd">
+    @Html.Partial("_Register")
 </div>

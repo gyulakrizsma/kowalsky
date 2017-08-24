@@ -2,7 +2,7 @@
     .price-box {
         border: 1px solid transparent;
         padding-bottom: 15px;
-        padding-top: 5px;
+        padding-top: 15px;
         transition: all 0.3s ease 0s;
 
         h2 {
@@ -18,5 +18,16 @@
         &:hover {
             border: 1px solid @kj-green;
         }
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+    .section-price {
+
+        .price-box {
+            margin: 20px 0;
+        }
+
     }
 }

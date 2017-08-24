@@ -62,19 +62,15 @@
 </header>
 
 <div class="container-fluid">
-    @RenderBody()    
+    @RenderBody()
 </div>
 
 <footer>
-    <div class="row">
-        <div class="col-md-12">
-            <ul>
-                <li><a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/Krizsmajogsi/timeline" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                <li><a class="btn btn-social-icon btn-twitter" href="https://twitter.com/krizsmajogsi" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                <li><a class="btn btn-social-icon btn-google-pus" href="https://plus.google.com/101848592558265257231/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-            </ul>
-        </div>
-    </div>
+    <ul>
+        <li><a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/Krizsmajogsi/timeline" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="btn btn-social-icon btn-twitter" href="https://twitter.com/krizsmajogsi" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="btn btn-social-icon btn-google-pus" href="https://plus.google.com/101848592558265257231/posts" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+    </ul>
 </footer>
     
 <environment names="Development">
@@ -83,20 +79,20 @@
     <script src="~/lib/smoothscroll/dist/smoothscroll.js"></script>
     <script src="~/lib/jquery.scrollTo/jquery.scrollTo.js"></script>
     <script src="~/lib/jquery-one-page-nav/jquery.nav.js"></script>
-    <script src="~/lib/owl-carousel/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/lib/owl-carousel/owl-carousel/owl.carousel.js"></script>
     <script src="~/lib/jquery.stellar/jquery.stellar.js"></script>
     <script src="~/lib/nivo-lightbox/nivo-lightbox.js"></script>
     <script src="~/lib/wow/dist/wow.js"></script>
     <script type="text/javascript" src="~/js/googleMap.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwb_OzjSncay_deJnaxIAYFawJw69qYG4&callback=initializeMap"></script>
+    
     <script src="~/lib/angular/angular.js"></script>
-
-    <script src="~/js/home.js"></script>
-
     <script src="~/js/client/app/app.types.js"></script>
     <script src="~/js/client/app/register/register.module.js"></script>
     <script src="~/js/client/app/register/register.services.js"></script>
     <script src="~/js/client/app/register/registerController.js"></script>
+    
+    <script src="~/js/home.js"></script>
 </environment>
 
 <environment names="Production">
@@ -104,7 +100,7 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwb_OzjSncay_deJnaxIAYFawJw69qYG4&callback=initializeMap"></script>
     <script src="~/js/app.min.js" text="text/javascript"></script>
 </environment>
-
+   
 @RenderSection("scripts", required: false)
 </body>
 </html>

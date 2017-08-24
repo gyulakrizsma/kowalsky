@@ -8,9 +8,7 @@
         singleItem: true
     });
 
-    var owl = $("#pictures");
-
-    owl.owlCarousel({
+    $("#gallery").owlCarousel({
         items: 4,
         itemsDesktop: [1000, 4],
         itemsDesktopSmall: [900, 2],

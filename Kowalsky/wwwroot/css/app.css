@@ -50,7 +50,7 @@ body .section-discount,
 body .section-about,
 body .section-contact,
 body .section-register {
-  padding-bottom: 130px;
+  padding-bottom: 50px;
   padding-top: 50px;
   max-width: 1200px;
   margin: auto;
@@ -68,7 +68,7 @@ body .section-register h2 {
   font-size: 40px;
   font-weight: 300;
   letter-spacing: 1px;
-  margin-top: 40px;
+  margin-top: 0px;
   margin-bottom: 20px;
 }
 body .under-line-padding {
@@ -192,6 +192,9 @@ header ul li.current a {
   font-weight: 300;
   line-height: 1.4em;
 }
+.section-home .section-home-cont img {
+  width: 400px;
+}
 .section-home .section-home-cont button {
   border: none;
   color: white;
@@ -226,6 +229,8 @@ header ul li.current a {
   color: #00ab66;
   font-size: 35px;
   text-decoration: none;
+  margin-left: -35px;
+  width: 0px;
 }
 .section-home .section-home-cont .arrow-down .bounce a:hover {
   text-decoration: none;
@@ -233,6 +238,30 @@ header ul li.current a {
 .section-home .dark-overlay {
   min-height: 100%;
   background: rgba(0, 0, 0, 0.55);
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .section-home .section-home-cont {
+    padding-top: 50px;
+  }
+  .section-home .section-home-cont .row h1 {
+    font-size: 30px;
+    margin-bottom: 0px;
+  }
+  .section-home .section-home-cont .row h5 {
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 1em;
+  }
+  .section-home .section-home-cont img {
+    width: 200px;
+  }
+  .section-home .section-home-cont button {
+    margin-top: 30px;
+  }
+  .section-home .section-home-cont .arrow-down {
+    top: 85%;
+  }
 }
 .section-schedule .time-box-list .time-box {
   background: #161616;
@@ -309,7 +338,7 @@ footer ul li .btn-social-icon:hover {
 .section-price .price-box {
   border: 1px solid transparent;
   padding-bottom: 15px;
-  padding-top: 5px;
+  padding-top: 15px;
   transition: all 0.3s ease 0s;
 }
 .section-price .price-box h2 {
@@ -322,6 +351,12 @@ footer ul li .btn-social-icon:hover {
 }
 .section-price .price-box:hover {
   border: 1px solid #00ab66;
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .section-price .price-box {
+    margin: 20px 0;
+  }
 }
 .section-comment .owl-theme .owl-controls .owl-page span {
   background: #e5c41a;
@@ -412,6 +447,12 @@ footer ul li .btn-social-icon:hover {
     text-align: center;
   }
 }
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .section-about .about-profile {
+    margin-bottom: 20px;
+  }
+}
 .section-contact .line-yellow {
   margin: 0;
 }
@@ -445,6 +486,11 @@ footer ul li .btn-social-icon:hover {
     margin-left: 20%;
   }
 }
+@media only screen and (max-width: 480px) {
+  .section-contact .text-sm-center {
+    margin-left: 10%;
+  }
+}
 .section-register .register-icon {
   color: #00ab66;
   font-size: 75px;
@@ -467,7 +513,7 @@ footer ul li .btn-social-icon:hover {
   height: 45px;
 }
 .section-register .kj-form textarea {
-  margin: 30px 0;
+  margin-top: 30px;
   height: 150px;
 }
 .section-register .kj-form input,
@@ -508,8 +554,19 @@ footer ul li .btn-social-icon:hover {
   padding: 15px 35px;
   min-width: 250px;
   transition: all 0.3s ease 0s;
+  margin-top: 30px;
 }
 .section-register .kj-submit:hover {
   background: #0c794d;
   color: white;
+}
+@media only screen and (max-width: 768px) {
+  .section-register .kj-form .form-group {
+    margin-bottom: 0px;
+  }
+  .section-register .kj-form input,
+  .section-register .kj-form textarea {
+    margin-top: 15px;
+    margin-bottom: 0px;
+  }
 }

@@ -5,7 +5,7 @@ namespace Kowalsky.Models
     public class HomeOverviewViewModel
     {
         public HomeOverviewViewModel(int mainPrice, IReadOnlyCollection<Schedule> schedules,
-            IReadOnlyCollection<Price> prices, IReadOnlyCollection<Comment> comments)
+            IReadOnlyList<Price> prices, IReadOnlyCollection<Comment> comments)
         {
             MainPrice = mainPrice;
             Schedules = schedules;
@@ -17,7 +17,7 @@ namespace Kowalsky.Models
 
         public IReadOnlyCollection<Schedule> Schedules { get; }
 
-        public IReadOnlyCollection<Price> Prices { get; }
+        public IReadOnlyList<Price> Prices { get; }
 
         public IReadOnlyCollection<Comment> Comments { get; }
     }
