@@ -1,5 +1,5 @@
-﻿<section id="register" class="row section-register" data-ng-app="app.register">
-    <div class="col-md-12" data-ng-controller="RegisterController as vm">
+﻿<section id="register" class="row section-register" ng-app="app.register">
+    <div class="col-md-12" ng-controller="RegisterController as vm">
 
         <div class="row register-icon wow fadeIn" data-wow-duration="1.5s">
             <div class="col-md-12">
@@ -22,7 +22,7 @@
                                    id="name" 
                                    placeholder="Név" 
                                    required 
-                                   data-ng-model="vm.ContactInfo.Name"/>
+                                   ng-model="vm.ContactInfo.Name"/>
                         </div>
                         <div class="col-md-6">
                             <input type="email" 
@@ -31,7 +31,7 @@
                                    name="email" 
                                    placeholder="E-Mail cím" 
                                    required
-                                   data-ng-model="vm.ContactInfo.Email"/>
+                                   ng-model="vm.ContactInfo.Email"/>
                         </div>
                     </div>
                     
@@ -41,8 +41,8 @@
                                    class="form-control" 
                                    placeholder="Telefonszám (+36301111111)" 
                                    required 
-                                   data-ng-blur="vm.focusoutphone()" 
-                                   data-ng-model="vm.ContactInfo.Phone"/>
+                                   ng-blur="vm.focusoutphone()" 
+                                   ng-model="vm.ContactInfo.Phone"/>
                         </div>
                     </div>
                     
@@ -50,13 +50,13 @@
                         <div class="col-md-12">
                             <textarea class="form-control" 
                                       placeholder="Megjegyzés" 
-                                      data-ng-model="vm.ContactInfo.Comment"></textarea>
+                                      ng-model="vm.ContactInfo.Comment"></textarea>
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="col-md-12">
-                            <button class="btn btn-lg kj-submit" data-ng-disabled="vm.registerForm.$invalid" data-ng-click="vm.save()">Jelentkezés</button>
+                            <button class="btn btn-lg kj-submit" ng-disabled="vm.registerForm.$invalid" ng-click="vm.save()">Jelentkezés</button>
                         </div>
                     </div>
                 </form>
