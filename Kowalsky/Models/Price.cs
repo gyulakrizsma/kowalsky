@@ -2,14 +2,14 @@
 {
     public class Price
     {
-        public Price(int prices, string title, string description)
+        public Price(int amount, string title, string description)
         {
-            Prices = prices;
+            Amount = amount;
             Title = title;
             Description = description;
         }
 
-        public int Prices { get; }
+        public int Amount { get; }
 
         public string Title { get; }
 

@@ -15,14 +15,14 @@ namespace Kowalsky.Controllers
                 new Schedule(new DateTime(2017, 11, 13), new DateTime(2017, 11, 15), new DateTime(2017, 11, 16), new DateTime(2017, 11, 20), new DateTime(2017, 11, 22), new DateTime(2017, 11, 23), new DateTime(2017, 11, 27)),
             };
 
-            var prices = new[]
+            var priceModel = new PriceModel(99000, new[]
             {
                 new Price(7000, "Orvosi alkamlassági vizsgálat", ""),
                 new Price(7000, "Egészségügyi tanfolyam", ""),
                 new Price(5500, "Egészségügyi vizsgadíj", ""),
                 new Price(4600, "Elméleti vizsgadíj (kresz teszt)", ""),
                 new Price(11000, "Forgalmi vizsgadíj", "")
-            };
+            });
 
             var comments = new[]
             {
@@ -30,7 +30,7 @@ namespace Kowalsky.Controllers
                 new Comment("Legjobb suli érdekesek az órái, vezetői oktatàsa nyugis Köszönjük K. Gábor", "Trudics Kriszta", "")
             };
 
-            var model = new HomeOverviewViewModel(99000, schedules, prices, comments);
+            var model = new HomeOverviewViewModel(99000, schedules, priceModel, comments);
 
             return View(model);
         }
