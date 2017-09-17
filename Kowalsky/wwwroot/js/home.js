@@ -21,7 +21,7 @@
     });
 
 
-    $('#pictures a').nivoLightbox({
+    $('#gallery a').nivoLightbox({
         effect: 'fadeScale'
     });
 
