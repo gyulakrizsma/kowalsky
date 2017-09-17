@@ -162,22 +162,32 @@ header ul li.current a {
   min-height: 100%;
 }
 .section-home .section-home-cont {
-  padding-top: 100px;
   color: white;
   height: 100%;
 }
 .section-home .section-home-cont > div {
   height: 100%;
 }
-.section-home .section-home-cont .row {
-  margin-top: 50px;
+.section-home .section-home-cont > div .outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
-.section-home .section-home-cont .row h1 {
+.section-home .section-home-cont > div .middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+.section-home .section-home-cont > div .inner {
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-home .section-home-cont h1 {
   font-size: 50px;
   font-weight: 300;
-  margin-bottom: 50px;
+  margin: 30px 0px;
 }
-.section-home .section-home-cont .row h5 {
+.section-home .section-home-cont h5 {
   font-size: 30px;
   font-weight: 300;
   line-height: 1.4em;
@@ -229,20 +239,33 @@ header ul li.current a {
   min-height: 100%;
   background: rgba(0, 0, 0, 0.55);
 }
-/* Extra Small Devices, Phones */
-@media only screen and (max-width: 480px) {
-  .section-home .section-home-cont {
-    padding-top: 30px;
+@media only screen and (max-width: 1024px) {
+  .section-home .section-home-cont img {
+    width: 300px;
   }
-  .section-home .section-home-cont .row {
-    margin-top: 30px;
-  }
-  .section-home .section-home-cont .row h1 {
-    font-size: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .section-home .section-home-cont h1 {
+    font-size: 35px;
     margin-bottom: 0px;
   }
-  .section-home .section-home-cont .row h5 {
-    font-size: 22px;
+  .section-home .section-home-cont h5 {
+    font-size: 28px;
+    font-weight: 200;
+    line-height: 1em;
+  }
+  .section-home .section-home-cont button {
+    margin-top: 30px;
+  }
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .section-home .section-home-cont h1 {
+    font-size: 25px;
+    margin-bottom: 0px;
+  }
+  .section-home .section-home-cont h5 {
+    font-size: 20px;
     font-weight: 200;
     line-height: 1em;
   }
@@ -251,9 +274,6 @@ header ul li.current a {
   }
   .section-home .section-home-cont button {
     margin-top: 30px;
-  }
-  .section-home .section-home-cont .arrow-down {
-    top: 80%;
   }
 }
 .section-schedule .time-box-list .time-box {
