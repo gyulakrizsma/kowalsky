@@ -1,5 +1,4 @@
-﻿@using System.Collections.Generic
-@using System.Globalization
+﻿@using System.Globalization
 @using System.Linq
 @using Kowalsky.Models
 @model IReadOnlyCollection<Schedule>
@@ -15,7 +14,7 @@
             <div class="col-md-12">
                 <h2 class="section-title">Időpontok</h2>
                 <div class="line-yellow"></div>
-                <div class="short-text">Itt megtekintheti hogy mikor indulnak előadásaink</div>
+                <div class="short-text">Tanfolyamaink folyamatosan indulnak, érdeklődj bátran, szinte biztosan találunk neked megfelelő időpontot!</div>
                 <div class="line-yellow"></div>
                 <div class="under-line-padding">
                     A tanfolyamok egységesen 17:00-20:30-ig tartanak.<br/>
@@ -57,7 +56,14 @@
                                 }
                                 @if (item.SeventhDay.HasValue)
                                 {
-                                    <li><span class="kj-yellow glyphicon glyphicon-calendar"></span><span class="time-text">@item.SeventhDay.Value.Day</span></li>
+                                    if (item.SeventhDay.Value.Month == item.FirstDay.Month)
+                                    {
+                                        <li><span class="kj-yellow glyphicon glyphicon-calendar"></span><span class="time-text">@item.SeventhDay.Value.Day</span></li>
+                                    }
+                                    else
+                                    {
+                                        <li><span class="kj-yellow glyphicon glyphicon-calendar"></span><span class="time-text">(@item.SeventhDay.Value.ToString("MMMM", ci)) @item.SeventhDay.Value.Day</span></li>
+                                    }
                                 }
                             </ul>
                         </div>
