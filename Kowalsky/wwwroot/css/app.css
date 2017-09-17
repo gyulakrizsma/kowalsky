@@ -216,8 +216,8 @@ header ul li.current a {
 .section-home .section-home-cont .arrow-down {
   position: absolute;
   top: 90%;
-  left: 50%;
   margin-top: 0px;
+  width: 100%;
 }
 .section-home .section-home-cont .arrow-down .bounce {
   position: relative;
@@ -229,8 +229,6 @@ header ul li.current a {
   color: #00ab66;
   font-size: 35px;
   text-decoration: none;
-  margin-left: -35px;
-  width: 0px;
 }
 .section-home .section-home-cont .arrow-down .bounce a:hover {
   text-decoration: none;
