@@ -39,7 +39,7 @@
         scrollTo(this.hash);
     });
 
-    $('.section-home-cont button').click(function () {
+    $('.section-home-cont button, .section-price button').click(function () {
         var target = '#register';
         scrollTo(target);
     });

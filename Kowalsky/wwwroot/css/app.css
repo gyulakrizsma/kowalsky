@@ -328,6 +328,24 @@ footer ul li .btn-social-icon:hover {
   background-color: #0c794d;
   color: white;
 }
+.section-price button {
+  border: none;
+  color: white;
+  min-width: 250px;
+  margin-top: 50px;
+  padding: 15px 35px;
+  background: #00ab66;
+  transition: background-color 0.3s ease-out;
+}
+.section-price button i.glyphicon {
+  margin-right: 5px;
+}
+.section-price button:hover {
+  background: #e5c41a;
+}
+.section-price button:focus {
+  outline: none;
+}
 .section-price .price-box {
   border: 1px solid transparent;
   padding-bottom: 15px;
