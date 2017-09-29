@@ -31,9 +31,9 @@
 
         <div class="row margin-lg">
 
-            @foreach (var item in Model.Prices)
+            @foreach (var item in Model.Prices.Take(2))
             {
-                <div class="col-md-4 col-sm-4 @(item == Model.Prices[0] || item == Model.Prices[1] ? "col-sm-offset-1" : "") ">
+                <div class="col-md-4 col-sm-4 col-sm-offset-1">
                     <div class="row price-box wow fadeIn" data-wow-duration="1.5s">
                         <div class="col-md-12">
                             <h2>@item.Amount Ft</h2>
@@ -45,8 +45,22 @@
                     </div>
                 </div>
             }
-
         </div>
-
+        <div class="row">
+            @foreach (var item in Model.Prices.Skip(2))
+            {
+                <div class="col-md-4 col-sm-4">
+                    <div class="row price-box wow fadeIn" data-wow-duration="1.5s">
+                        <div class="col-md-12">
+                            <h2>@item.Amount Ft</h2>
+                            <h4>@item.Title</h4>
+                            <span>
+                                @item.Description
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            }  
+        </div>
     </div>
 </section>
