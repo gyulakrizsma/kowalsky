@@ -1,10 +1,25 @@
 ﻿<html>
 <head>
+    
+    <environment names="Production">
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107502571-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)};
+            gtag('js', new Date());
+
+            gtag('config', 'PUT PASSWORD HERE');
+        </script>
+    </environment>
+
     <title>Krizsmajogsi</title>
     <link rel="icon" href="~/images/favicon.ico">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta charset="UTF-8">
+    <meta name="description" content="Krizsma Gábor autósiskolája">
+    <meta name="keywords" content="autósiskola, Krizsma Gábor, budapest, autóvezetés oktatás">
 
     <environment names="Development">
         <link href="http://fonts.googleapis.com/css?subset=latin,latin-ext&family=Roboto:100,300,100italic,400,300italic" rel="stylesheet" type="text/css">
@@ -19,7 +34,7 @@
         <link href="~/lib/bootstrap-social/bootstrap-social.css" rel="stylesheet"/>
         <link href="~/css/app.css" rel="stylesheet"/>
     </environment>
-    
+
     <environment names="Production">
         <link href="http://fonts.googleapis.com/css?subset=latin,latin-ext&family=Roboto:100,300,100italic,400,300italic" rel="stylesheet" type="text/css">
         <link href="/css/app.min.css" rel="stylesheet"/>
