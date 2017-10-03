@@ -29,6 +29,7 @@ namespace Kowalsky.Services
             sb.Append("<p>Az alábbi személy jelentkezett a weboldalon keresztül<p>");
             sb.Append($"<p>Név: {contactInfo.Name}</p>");
             sb.Append($"<p>Telefon: {contactInfo.Phone}</p>");
+            sb.Append($"<p>E-mail: {contactInfo.Email}</p>");
 
             if (!string.IsNullOrWhiteSpace(contactInfo.Comment))
             {

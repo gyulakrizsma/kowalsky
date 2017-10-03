@@ -19,12 +19,16 @@ namespace Kowalsky.Services
 
         private MailMessage CreateMailMessage(MailAddress toAddress, string subject, string body)
         {
-            return new MailMessage(new MailAddress(_from, "KrizsmaJogsi"), toAddress)
+            var message = new MailMessage(new MailAddress(_from, "KrizsmaJogsi"), toAddress)
             {
                 Subject = subject,
                 Body = body,
                 IsBodyHtml = true
             };
+
+            message.CC.Add(new MailAddress("krizsmag@freemail.hu"));
+
+            return message;
         }
 
         private SmtpClient CreateSmtpClient()
