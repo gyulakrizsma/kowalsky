@@ -19,16 +19,12 @@ namespace Kowalsky.Services
 
         private MailMessage CreateMailMessage(MailAddress toAddress, string subject, string body)
         {
-            var message = new MailMessage(new MailAddress(_from, "KrizsmaJogsi"), toAddress)
+            return new MailMessage(new MailAddress(_from, "KrizsmaJogsi"), toAddress)
             {
                 Subject = subject,
                 Body = body,
                 IsBodyHtml = true
             };
-
-            message.CC.Add(new MailAddress("krizsmag@freemail.hu"));
-
-            return message;
         }
 
         private SmtpClient CreateSmtpClient()
@@ -60,7 +56,7 @@ namespace Kowalsky.Services
 
         public void SendNotificationEmail(ContactInfo contactInfo)
         {
-            var toAddress = new MailAddress("gyula.krizsma@softfactors.com", contactInfo.Name);
+            var toAddress = new MailAddress("krizsmag@freemail.hu");
             var template = _templateService.CreateNotificationEmailTemplate(contactInfo);
 
             SendEmail(toAddress, template.subject, template.body);
