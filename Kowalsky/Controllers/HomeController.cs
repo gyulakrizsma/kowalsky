@@ -17,7 +17,7 @@ namespace Kowalsky.Controllers
 
             var priceModel = new PriceModel(99000, new[]
             {
-                new Price(7000, "Orvosi alkamlassági vizsgálat", ""),
+                new Price(7000, "Orvosi alkalmassági vizsgálat", ""),
                 new Price(7000, "Egészségügyi tanfolyam", ""),
                 new Price(5500, "Egészségügyi vizsgadíj", ""),
                 new Price(4600, "Elméleti vizsgadíj (kresz teszt)", ""),
@@ -27,7 +27,7 @@ namespace Kowalsky.Controllers
             var comments = new[]
             {
                 new Comment("Szuper volt az elméleti oktatás, amit Krizsma Gábor tartott, külön köszönet az oktatómnak, Császár Viktornak, kismamakánt különösen értékeltem a türelmes és segítőkész hozzáállását.", "Keszthelyiné Simon Viktória", ""),
-                new Comment("Legjobb suli érdekesek az órái, vezetői oktatàsa nyugis Köszönjük K. Gábor", "Trudics Kriszta", "")
+                new Comment("Legjobb suli, érdekesek az órái, vezetői oktatása nyugis. Köszönjük K. Gábor", "Trudics Kriszta", "")
             };
 
             var model = new HomeOverviewViewModel(99000, schedules, priceModel, comments);
