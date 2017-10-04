@@ -15,14 +15,20 @@ namespace Kowalsky.Controllers
                 new Schedule(new DateTime(2017, 11, 13), new DateTime(2017, 11, 15), new DateTime(2017, 11, 16), new DateTime(2017, 11, 20), new DateTime(2017, 11, 22), new DateTime(2017, 11, 23), new DateTime(2017, 11, 27)),
             };
 
-            var priceModel = new PriceModel(99000, new[]
-            {
-                new Price(7000, "Orvosi alkalmassági vizsgálat", ""),
-                new Price(7000, "Egészségügyi tanfolyam", ""),
-                new Price(5500, "Egészségügyi vizsgadíj", ""),
-                new Price(4600, "Elméleti vizsgadíj (kresz teszt)", ""),
-                new Price(11000, "Forgalmi vizsgadíj", "")
-            });
+            var priceModel = new PriceModel(99000,
+                new[]
+                {
+                    new Price(30000, "Tanfolyami képzés", "A tananyagot egy szakoktató előadásai során sajátíthatod el, mely előadásokon kötelező megjelenned."),
+                    new Price(36000, "E-Learning", "Az elméleti vizsgához szükséges tananyaghoz, a bejelentkezéstől számított 24 órán belül, iskolánk elektronikus hozzáférést biztosít számodra, melyet otthon is megtanulhatsz, idődet szabadon beosztva.")
+                },
+                new[]
+                {
+                    new Price(7000, "Orvosi alkalmassági vizsgálat", ""),
+                    new Price(7000, "Egészségügyi tanfolyam", ""),
+                    new Price(5500, "Egészségügyi vizsgadíj", ""),
+                    new Price(4600, "Elméleti vizsgadíj (kresz teszt)", ""),
+                    new Price(11000, "Forgalmi vizsgadíj", "")
+                });
 
             var comments = new[]
             {

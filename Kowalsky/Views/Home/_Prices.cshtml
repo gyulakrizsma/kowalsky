@@ -23,6 +23,29 @@
         </div>
         
         <div class="row margin-lg">
+            Az elméleti vizsgára való felkészüléshez az alábbi opciók közül választhatsz egyet
+        </div>
+
+        <div class="row margin-lg">
+            
+            @foreach (var item in Model.TheoryPrices)
+            {
+                <div class="col-md-6 col-sm-6">
+                    <div class="row price-box wow fadeIn" data-wow-duration="1.5s">
+                        <div class="col-md-12">
+                            <h2>@item.Amount Ft</h2>
+                            <h4>@item.Title</h4>
+                            <span>
+                                @item.Description
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        
+        <div class="row margin-lg">
             A jogosítvány megszerzéséhez vezető úton több hivatalos akadályt is le kell küzdeni.
             Ezek autósiskolától független tényezők, ami azt jelenti, bármelyik iskolát is választod Magyarországon,
             ezen költségeket pluszban vállalnod kell. Iskolánk ahol lehet megkönnyíti neked a hivatalos eljárást,
@@ -33,7 +56,7 @@
 
             @foreach (var item in Model.Prices.Take(2))
             {
-                <div class="col-md-4 col-sm-4 col-sm-offset-1">
+                <div class="col-md-6 col-sm-6">
                     <div class="row price-box wow fadeIn" data-wow-duration="1.5s">
                         <div class="col-md-12">
                             <h2>@item.Amount Ft</h2>
