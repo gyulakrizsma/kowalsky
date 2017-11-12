@@ -56,7 +56,7 @@ namespace Kowalsky.Services
 
         public void SendNotificationEmail(ContactInfo contactInfo)
         {
-            var toAddress = new MailAddress("krizsmag@freemail.hu");
+            var toAddress = new MailAddress("krizsmajogsi@gmail.com");
             var template = _templateService.CreateNotificationEmailTemplate(contactInfo);
 
             SendEmail(toAddress, template.subject, template.body);
