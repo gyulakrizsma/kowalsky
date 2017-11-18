@@ -1,6 +1,6 @@
 ﻿using Kowalsky.Controllers.Dtos;
 using Kowalsky.Controllers.Sanitizers;
-using Kowalsky.Services;
+using Kowalsky.Services.Email;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kowalsky.Controllers

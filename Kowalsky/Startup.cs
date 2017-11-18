@@ -1,5 +1,6 @@
 ﻿using Kowalsky.Controllers.Sanitizers;
 using Kowalsky.Services;
+using Kowalsky.Services.Email;
 using Kowalsky.Services.Sentry;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,12 +31,9 @@ namespace Kowalsky
 
             services.AddTransient<IHomeSanitizer, HomeSanitizer>();
             services.AddTransient<IEmailTemplateService, EmailTemplateService>();
-            
-            services.AddTransient<IEmailSenderService>(
-                service => new EmailSenderService(
-                    new EmailTemplateService(),
-                    Configuration["MailSettings:from"],
-                    Configuration["MailSettings:password"]));
+
+            services.Configure<MailOptions>(Configuration.GetSection("Mail"));
+            services.AddTransient<IEmailSenderService, EmailSenderService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
