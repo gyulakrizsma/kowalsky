@@ -6,8 +6,6 @@ namespace Kowalsky.Services
     {
         void SendEmails(ContactInfo contactInfo);
 
-        void SendConfirmationEmail(ContactInfo contactInfo);
-
         void SendNotificationEmail(ContactInfo contactInfo);
     }
 }

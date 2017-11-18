@@ -42,16 +42,7 @@ namespace Kowalsky.Services
 
         public void SendEmails(ContactInfo contactInfo)
         {
-            SendConfirmationEmail(contactInfo);
             SendNotificationEmail(contactInfo);
-        }
-
-        public void SendConfirmationEmail(ContactInfo contactInfo)
-        {
-            var toAddress = new MailAddress(contactInfo.Email, contactInfo.Name);
-            var template = _templateService.CreateConfirmationEmailTemplate(contactInfo);
-
-            SendEmail(toAddress, template.subject, template.body);
         }
 
         public void SendNotificationEmail(ContactInfo contactInfo)
