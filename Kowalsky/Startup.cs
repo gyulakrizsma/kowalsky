@@ -1,5 +1,6 @@
 ﻿using Kowalsky.Controllers.Sanitizers;
 using Kowalsky.Services;
+using Kowalsky.Services.Sentry;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -24,6 +25,9 @@ namespace Kowalsky
         {
             services.AddMvc();
 
+            services.Configure<SentryOptions>(Configuration.GetSection("Sentry"));
+            services.AddScoped<IErrorReporter, SentryErrorReporter>();
+
             services.AddTransient<IHomeSanitizer, HomeSanitizer>();
             services.AddTransient<IEmailTemplateService, EmailTemplateService>();
             
@@ -41,6 +45,7 @@ namespace Kowalsky
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMiddleware<SentryMiddleware>();
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
