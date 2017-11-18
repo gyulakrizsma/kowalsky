@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using Kowalsky.Models;
 
-namespace Kowalsky.Services
+namespace Kowalsky.Services.Email
 {
     public class EmailTemplateService : IEmailTemplateService
     {

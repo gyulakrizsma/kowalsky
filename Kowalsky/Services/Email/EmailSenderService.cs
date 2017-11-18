@@ -1,25 +1,24 @@
 ﻿using System.Net;
 using System.Net.Mail;
 using Kowalsky.Models;
+using Microsoft.Extensions.Options;
 
-namespace Kowalsky.Services
+namespace Kowalsky.Services.Email
 {
     public class EmailSenderService : IEmailSenderService
     {
+        private readonly MailOptions _options;
         private readonly IEmailTemplateService _templateService;
-        private readonly string _from;
-        private readonly string _password;
 
-        public EmailSenderService(IEmailTemplateService templateService, string from, string password)
+        public EmailSenderService(IOptions<MailOptions> options, IEmailTemplateService templateService)
         {
-            _from = from;
+            _options = options.Value;
             _templateService = templateService;
-            _password = password;
         }
 
         private MailMessage CreateMailMessage(MailAddress toAddress, string subject, string body)
         {
-            return new MailMessage(new MailAddress(_from, "KrizsmaJogsi"), toAddress)
+            return new MailMessage(new MailAddress(_options.From, "KrizsmaJogsi"), toAddress)
             {
                 Subject = subject,
                 Body = body,
@@ -36,7 +35,7 @@ namespace Kowalsky.Services
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(_from, _password)
+                Credentials = new NetworkCredential(_options.From, _options.Password)
             };
         }
 
@@ -55,7 +54,7 @@ namespace Kowalsky.Services
 
         private void SendEmail(MailAddress toAddress, string subject, string body)
         {
-            if (string.IsNullOrWhiteSpace(_from) || string.IsNullOrWhiteSpace(_password))
+            if (string.IsNullOrWhiteSpace(_options.From) || string.IsNullOrWhiteSpace(_options.Password))
             {
                 return;
             }

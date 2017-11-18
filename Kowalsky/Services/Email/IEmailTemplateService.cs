@@ -1,6 +1,6 @@
 ﻿using Kowalsky.Models;
 
-namespace Kowalsky.Services
+namespace Kowalsky.Services.Email
 {
     public interface IEmailTemplateService
     {
