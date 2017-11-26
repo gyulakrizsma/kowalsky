@@ -1,6 +1,7 @@
 ﻿using Kowalsky.Controllers.Sanitizers;
 using Kowalsky.Services;
 using Kowalsky.Services.Email;
+using Kowalsky.Services.GoogleApi;
 using Kowalsky.Services.Sentry;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,6 +35,9 @@ namespace Kowalsky
 
             services.Configure<MailOptions>(Configuration.GetSection("Mail"));
             services.AddTransient<IEmailSenderService, EmailSenderService>();
+
+            services.Configure<GoogleApiOptions>(Configuration.GetSection("GoogleApi"));
+            services.AddTransient<IGoogleApiServices, GoogleApiServices>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
