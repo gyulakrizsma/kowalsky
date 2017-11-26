@@ -1,4 +1,5 @@
-﻿using Kowalsky.Controllers.Dtos;
+﻿using System.Threading.Tasks;
+using Kowalsky.Controllers.Dtos;
 using Kowalsky.Controllers.Sanitizers;
 using Kowalsky.Services.Email;
 using Kowalsky.Services.GoogleApi;
@@ -21,7 +22,7 @@ namespace Kowalsky.Controllers
         }
 
         [HttpPost]
-        public IActionResult Contact([FromBody] ContactInfoDto dto)
+        public async Task<IActionResult> Contact([FromBody] ContactInfoDto dto)
         {
             if (dto == null)
             {
@@ -30,8 +31,8 @@ namespace Kowalsky.Controllers
 
             var contactInfo = _sanitizer.SanitizeContactInfo(dto);
 
-            _emailSenderService.SendEmails(contactInfo);
-            _googleApiServices.SaveContactInfoToSpreadSheet(contactInfo);
+            await _emailSenderService.SendEmailAsync(contactInfo);
+            await _googleApiServices.SaveContactInfoToSpreadSheetAsync(contactInfo);
 
             return Ok();
         }

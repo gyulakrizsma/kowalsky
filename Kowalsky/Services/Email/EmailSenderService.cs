@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Mail;
+using System.Threading.Tasks;
 using Kowalsky.Models;
 using Microsoft.Extensions.Options;
 
@@ -42,24 +43,24 @@ namespace Kowalsky.Services.Email
             };
         }
 
-        public void SendEmails(ContactInfo contactInfo)
+        public async Task SendEmailAsync(ContactInfo contactInfo)
         {
-            SendNotificationEmail(contactInfo);
+            await SendNotificationEmailAsync(contactInfo);
         }
 
-        public void SendNotificationEmail(ContactInfo contactInfo)
+        private async Task SendNotificationEmailAsync(ContactInfo contactInfo)
         {
             var toAddress = new MailAddress("krizsmajogsi@gmail.com");
             var template = _templateService.CreateNotificationEmailTemplate(contactInfo);
 
-            SendEmail(toAddress, template.subject, template.body);
+            await SendEmailAsync(toAddress, template.subject, template.body);
         }
 
-        private void SendEmail(MailAddress toAddress, string subject, string body)
+        private async Task SendEmailAsync(MailAddress toAddress, string subject, string body)
         {
             if (_options.Empty)
             {
-                _errorReporter.CaptureAsync("Mail options are empty");
+                await _errorReporter.CaptureAsync("Mail options are empty");
                 return;
             }
 
@@ -67,7 +68,7 @@ namespace Kowalsky.Services.Email
 
             using (var message = CreateMailMessage(toAddress, subject, body))
             {
-                smtp.Send(message);
+                await smtp.SendMailAsync(message);
             }
         }
 

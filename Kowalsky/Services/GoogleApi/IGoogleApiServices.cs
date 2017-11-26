@@ -1,9 +1,10 @@
-﻿using Kowalsky.Models;
+﻿using System.Threading.Tasks;
+using Kowalsky.Models;
 
 namespace Kowalsky.Services.GoogleApi
 {
     public interface IGoogleApiServices
     {
-        void SaveContactInfoToSpreadSheet(ContactInfo contact);
+        Task SaveContactInfoToSpreadSheetAsync(ContactInfo contact);
     }
 }

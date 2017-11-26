@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
@@ -23,27 +24,27 @@ namespace Kowalsky.Services.GoogleApi
             _credentials = options.Value;
         }
 
-        public void SaveContactInfoToSpreadSheet(ContactInfo contact)
+        public async Task SaveContactInfoToSpreadSheetAsync(ContactInfo contact)
         {
             if (_credentials.Empty)
             {
-                _errorReporter.CaptureAsync("GoogleApi options are empty");
+                await _errorReporter.CaptureAsync("GoogleApi options are empty");
                 return;
             }
 
             var service = CreateService();
             var data = SetupData(contact);
 
-            WriteToSpreadSheet(service, data);
+            await WriteToSpreadSheetAsync(service, data);
         }
 
-        private static void WriteToSpreadSheet(SheetsService service, ValueRange data)
+        private async Task WriteToSpreadSheetAsync(SheetsService service, ValueRange data)
         {
             var range = $"{Sheet}!A:E";
 
             var appendRequest = service.Spreadsheets.Values.Append(data, Id, range);
             appendRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.USERENTERED;
-            appendRequest.Execute();
+            await appendRequest.ExecuteAsync();
         }
 
         private static ValueRange SetupData(ContactInfo contact)
