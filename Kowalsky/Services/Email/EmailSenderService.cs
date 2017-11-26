@@ -9,11 +9,14 @@ namespace Kowalsky.Services.Email
     {
         private readonly MailOptions _options;
         private readonly IEmailTemplateService _templateService;
+        private readonly IErrorReporter _errorReporter;
 
-        public EmailSenderService(IOptions<MailOptions> options, IEmailTemplateService templateService)
+        public EmailSenderService(IOptions<MailOptions> options, IEmailTemplateService templateService,
+            IErrorReporter errorReporter)
         {
             _options = options.Value;
             _templateService = templateService;
+            _errorReporter = errorReporter;
         }
 
         private MailMessage CreateMailMessage(MailAddress toAddress, string subject, string body)
@@ -54,8 +57,9 @@ namespace Kowalsky.Services.Email
 
         private void SendEmail(MailAddress toAddress, string subject, string body)
         {
-            if (string.IsNullOrWhiteSpace(_options.From) || string.IsNullOrWhiteSpace(_options.Password))
+            if (_options.Empty)
             {
+                _errorReporter.CaptureAsync("Mail options are empty");
                 return;
             }
 
