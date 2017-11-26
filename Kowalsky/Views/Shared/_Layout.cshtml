@@ -1,4 +1,8 @@
-﻿<html>
+﻿@using Kowalsky.Services
+@using Microsoft.Extensions.Options
+@inject IOptions<GoogleAnalyticsOptions> AnalyticsOptions
+
+<html>
 <head>
     
     <environment names="Production">
@@ -9,7 +13,7 @@
             function gtag(){dataLayer.push(arguments)};
             gtag('js', new Date());
 
-            gtag('config', 'PUT PASSWORD HERE');
+            gtag('config', '@AnalyticsOptions.Value.Password');
         </script>
     </environment>
 

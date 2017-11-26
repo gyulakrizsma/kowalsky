@@ -27,6 +27,8 @@ namespace Kowalsky
         {
             services.AddMvc();
 
+            services.Configure<GoogleAnalyticsOptions>(Configuration.GetSection("GoogleAnalytics"));
+
             services.Configure<SentryOptions>(Configuration.GetSection("Sentry"));
             services.AddScoped<IErrorReporter, SentryErrorReporter>();
 
