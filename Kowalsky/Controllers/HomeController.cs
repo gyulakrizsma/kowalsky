@@ -15,7 +15,7 @@ namespace Kowalsky.Controllers
                 new Schedule(new DateTime(2017, 11, 13), new DateTime(2017, 11, 15), new DateTime(2017, 11, 16), new DateTime(2017, 11, 20), new DateTime(2017, 11, 22), new DateTime(2017, 11, 23), new DateTime(2017, 11, 27)),
             };
 
-            var priceModel = new PriceModel(99000,
+            var priceModel = new PriceModel(111000,
                 new[]
                 {
                     new Price(30000, "Tanfolyami képzés", "A tananyagot egy szakoktató előadásai során sajátíthatod el, mely előadásokon kötelező megjelenned."),
