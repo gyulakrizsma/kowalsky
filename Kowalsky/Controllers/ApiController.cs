@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Kowalsky.Controllers.Dtos;
 using Kowalsky.Controllers.Sanitizers;
-using Kowalsky.Services.Email;
 using Kowalsky.Services.GoogleApi;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,13 +10,11 @@ namespace Kowalsky.Controllers
     public class ApiController : Controller
     {
         private readonly IHomeSanitizer _sanitizer;
-        private readonly IEmailSenderService _emailSenderService;
         private readonly IGoogleApiServices _googleApiServices;
 
-        public ApiController(IHomeSanitizer sanitizer, IEmailSenderService emailSenderService, IGoogleApiServices googleApiServices)
+        public ApiController(IHomeSanitizer sanitizer, IGoogleApiServices googleApiServices)
         {
             _sanitizer = sanitizer;
-            _emailSenderService = emailSenderService;
             _googleApiServices = googleApiServices;
         }
 
@@ -31,7 +28,6 @@ namespace Kowalsky.Controllers
 
             var contactInfo = _sanitizer.SanitizeContactInfo(dto);
 
-            await _emailSenderService.SendEmailAsync(contactInfo);
             await _googleApiServices.SaveContactInfoToSpreadSheetAsync(contactInfo);
 
             return Ok();
