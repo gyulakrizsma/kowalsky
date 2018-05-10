@@ -92,6 +92,11 @@ gulp.task('min:css', function () {
         .pipe(gulp.dest('.'));
 });
 
+gulp.task('watch', function () {
+    gulp.watch(paths.app + '**/*', ["copyJs"]);
+    gulp.watch(paths.webroot + 'css/less' + '**/*', ["less"]);
+});
+
 gulp.task('min', ['clean', 'copyJs', 'min:js', 'less', 'min:css']);
 gulp.task('clean', ['clean:js', 'clean:css']);
 

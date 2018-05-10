@@ -9,6 +9,7 @@
     "gulp-less": "3.0.5",
     "main-bower-files": "2.13.1",
     "rimraf": "2.2.8",
+    "gulp-watch" : "4.3.11", 
     "@types/angular": "1.6.4"
   }
 }
