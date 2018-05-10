@@ -3,7 +3,7 @@
 
     import ContactInfo = App.Models.ContactInfo
 
-    class RegisterController {
+    export class RegisterController implements angular.IController {
 
         static IID = 'RegisterController';
         static $inject = [ApiHome.IID];
@@ -15,9 +15,11 @@
 
         constructor(private api: Home.ApiHome) {
 
-            this.contactInfo = new ContactInfo('', '', '', '');
+            this.contactInfo = new ContactInfo('', '', '', '', false);
 
         }
+
+        $onInit = () => { };
 
         get ContactInfo() { return this.contactInfo; }
         get HasErrors() {
@@ -50,6 +52,10 @@
 
                 this.contactInfo.Phone = this.contactInfo.Phone.replace(/^0+/, "").replace(/ /g, "");
             }
+        }
+
+        showDss = () => {
+            console.log('Accepted');
         }
 
         private successfullyRegistered = () => {

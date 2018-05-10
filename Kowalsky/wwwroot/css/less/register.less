@@ -19,9 +19,27 @@
     .kj-form {
         padding-top: 50px;
 
-        input {
+        input[type=text],
+        input[type=email] {
             margin: 15px 0;
             height: 45px;
+        }
+
+        input[type=checkbox] {
+            margin-top: 7px;
+        }
+
+        a {
+            color: @kj-green;
+            text-decoration: underline;
+        }
+
+        .checkbox {
+            padding: 10px;
+
+            &.dss-error {
+                border: 1px solid @kj-yellow;
+            }
         }
 
         textarea {
@@ -29,7 +47,9 @@
             height: 150px;
         }
 
-        input, textarea {
+        input[type=text],
+        input[type=email],
+        textarea {
             background-color: @kj-bacground-two;
             color: #c8c8c8;
             border: 1px solid @kj-green;
@@ -91,7 +111,8 @@
                 margin-bottom: 0px;
             }
 
-            input,
+            input[type=text],
+            input[type=email],
             textarea {
                 margin-top: 15px;
                 margin-bottom: 0px;

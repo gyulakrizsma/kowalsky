@@ -9,51 +9,65 @@
 
         <div class="row kj-form wow fadeIn" data-wow-duration="1.5s">
             <div class="col-md-12">
-                <form role="form" 
-                      class="form-horizontal" 
-                      id="registerForm" 
-                      name="vm.registerForm" 
+                <form role="form"
+                      class="form-horizontal"
+                      id="registerForm"
+                      name="vm.registerForm"
                       ng-hide="vm.hasRegistered">
-                    
+
                     <div class="row form-group">
                         <div class="col-md-6">
-                            <input type="text" 
-                                   class="form-control" 
-                                   id="name" 
-                                   placeholder="Név" 
-                                   required 
-                                   ng-model="vm.ContactInfo.Name"/>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="email" 
-                                   class="form-control" 
-                                   id="email" 
-                                   name="email" 
-                                   placeholder="E-mail cím" 
+                            <input type="text"
+                                   class="form-control"
+                                   id="name"
+                                   placeholder="Név"
                                    required
-                                   ng-model="vm.ContactInfo.Email"/>
+                                   ng-model="vm.contactInfo.Name" />
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email"
+                                   class="form-control"
+                                   id="email"
+                                   name="email"
+                                   placeholder="E-mail cím"
+                                   required
+                                   ng-model="vm.contactInfo.Email" />
                         </div>
                     </div>
-                    
+
                     <div class="row form-group">
                         <div class="col-md-12">
-                            <input type="text" 
-                                   class="form-control" 
-                                   placeholder="Telefonszám (+36301111111)" 
-                                   required 
-                                   ng-blur="vm.focusoutphone()" 
-                                   ng-model="vm.ContactInfo.Phone"/>
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Telefonszám (+36301111111)"
+                                   required
+                                   ng-blur="vm.focusoutphone()"
+                                   ng-model="vm.contactInfo.Phone" />
                         </div>
                     </div>
-                    
+
                     <div class="row form-group">
                         <div class="col-md-12">
-                            <textarea class="form-control" 
-                                      placeholder="Megjegyzés" 
-                                      ng-model="vm.ContactInfo.Comment"></textarea>
+                            <textarea class="form-control"
+                                      placeholder="Megjegyzés"
+                                      ng-model="vm.contactInfo.Comment"></textarea>
                         </div>
                     </div>
-                    
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="checkbox" ng-class="{'dss-error': vm.contactInfo.DssAggreementAccepted === undefined}">
+                                <label>
+                                    <input type="checkbox"
+                                           ng-model="vm.contactInfo.DssAggreementAccepted"
+                                           required>
+                                    <span>Elfogadom</span>
+                                    <a data-toggle="modal" data-target="#dssAggrement">Adatvedelmi szabalyzatot</a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-md-12">
                             <button class="btn btn-lg kj-submit" ng-disabled="vm.registerForm.$invalid" ng-click="vm.save()">Jelentkezés</button>
