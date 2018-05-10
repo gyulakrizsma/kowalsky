@@ -579,15 +579,30 @@ footer ul li .btn-social-icon:hover {
 .section-register .kj-form {
   padding-top: 50px;
 }
-.section-register .kj-form input {
+.section-register .kj-form input[type=text],
+.section-register .kj-form input[type=email] {
   margin: 15px 0;
   height: 45px;
+}
+.section-register .kj-form input[type=checkbox] {
+  margin-top: 7px;
+}
+.section-register .kj-form a {
+  color: #00ab66;
+  text-decoration: underline;
+}
+.section-register .kj-form .checkbox {
+  padding: 10px;
+}
+.section-register .kj-form .checkbox.dss-error {
+  border: 1px solid #e5c41a;
 }
 .section-register .kj-form textarea {
   margin-top: 15px;
   height: 150px;
 }
-.section-register .kj-form input,
+.section-register .kj-form input[type=text],
+.section-register .kj-form input[type=email],
 .section-register .kj-form textarea {
   background-color: #232323;
   color: #c8c8c8;
@@ -635,7 +650,8 @@ footer ul li .btn-social-icon:hover {
   .section-register .kj-form .form-group {
     margin-bottom: 0px;
   }
-  .section-register .kj-form input,
+  .section-register .kj-form input[type=text],
+  .section-register .kj-form input[type=email],
   .section-register .kj-form textarea {
     margin-top: 15px;
     margin-bottom: 0px;
