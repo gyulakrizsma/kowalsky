@@ -9,5 +9,7 @@
         public string Phone { get; set; }
 
         public string Comment { get; set; }
+
+        public bool DssAggreementAccepted { get; set; }
     }
 }
