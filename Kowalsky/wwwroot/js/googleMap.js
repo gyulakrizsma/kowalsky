@@ -13,7 +13,7 @@
     var marker = new window.google.maps.Marker({
         position: myLatlng,
         map: map,
-        title: 'Krizsma Autosiskloa',
+        title: 'Krizsma Autósiskola',
         animation: window.google.maps.Animation.DROP,
         icon: '/images/home/carmarker.png'
     });

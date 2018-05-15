@@ -1,6 +1,7 @@
 ﻿@using Kowalsky.Services
 @using Microsoft.Extensions.Options
 @inject IOptions<GoogleAnalyticsOptions> AnalyticsOptions
+@inject IOptions<GoogleMapsOptions> MapsOptions
 
 <html>
 <head>
@@ -103,7 +104,7 @@
     <script src="~/lib/nivo-lightbox/nivo-lightbox.js"></script>
     <script src="~/lib/wow/dist/wow.js"></script>
     <script type="text/javascript" src="~/js/googleMap.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwb_OzjSncay_deJnaxIAYFawJw69qYG4&callback=initializeMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=@MapsOptions.Value.ApiKey&callback=initializeMap"></script>
     
     <script src="~/lib/angular/angular.js"></script>
     <script src="~/js/client/app/app.types.js"></script>
@@ -116,7 +117,7 @@
 
 <environment names="Production">
     <script type="text/javascript" src="~/js/googleMap.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwb_OzjSncay_deJnaxIAYFawJw69qYG4&callback=initializeMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=@MapsOptions.Value.ApiKey&callback=initializeMap"></script>
     <script src="~/js/app.min.js" text="text/javascript"></script>
 </environment>
 

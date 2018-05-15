@@ -28,6 +28,7 @@ namespace Kowalsky
             services.AddMvc();
 
             services.Configure<GoogleAnalyticsOptions>(Configuration.GetSection("GoogleAnalytics"));
+            services.Configure<GoogleMapsOptions>(Configuration.GetSection("GoogleMapss"));
 
             services.Configure<SentryOptions>(Configuration.GetSection("Sentry"));
             services.AddScoped<IErrorReporter, SentryErrorReporter>();
