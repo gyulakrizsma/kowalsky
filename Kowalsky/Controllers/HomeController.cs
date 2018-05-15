@@ -1,5 +1,4 @@
-﻿using System;
-using Kowalsky.Models;
+﻿using Kowalsky.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kowalsky.Controllers
@@ -8,13 +7,6 @@ namespace Kowalsky.Controllers
     {
         public IActionResult Index()
         {
-            var schedules = new[]
-            {
-                new Schedule(new DateTime(2017, 9, 18), new DateTime(2017, 9, 20), new DateTime(2017, 9, 21), new DateTime(2017, 9, 25), new DateTime(2017, 9, 27), new DateTime(2017, 9, 28), new DateTime(2017, 10, 02)),
-                new Schedule(new DateTime(2017, 10, 16), new DateTime(2017, 10, 18), new DateTime(2017, 10, 19), new DateTime(2017, 10, 24), new DateTime(2017, 10, 25), new DateTime(2017, 10, 26), new DateTime(2017, 10, 30)),
-                new Schedule(new DateTime(2017, 11, 13), new DateTime(2017, 11, 15), new DateTime(2017, 11, 16), new DateTime(2017, 11, 20), new DateTime(2017, 11, 22), new DateTime(2017, 11, 23), new DateTime(2017, 11, 27)),
-            };
-
             var priceModel = new PriceModel(111000,
                 new[]
                 {
@@ -36,7 +28,7 @@ namespace Kowalsky.Controllers
                 new Comment("Legjobb suli, érdekesek az órái, vezetői oktatása nyugis. Köszönjük K. Gábor", "Trudics Kriszta", "")
             };
 
-            var model = new HomeOverviewViewModel(99000, schedules, priceModel, comments);
+            var model = new HomeOverviewViewModel(99000, priceModel, comments);
 
             return View(model);
         }
