@@ -33,10 +33,10 @@ namespace Kowalsky.Controllers.Sanitizers
                 throw new Exception("Phone is empty");
             }
 
-            if (!dto.DssAggreementAccepted)
-            {
-                throw new Exception("Data security statement was not accepted");
-            }
+            //if (!dto.DssAggreementAccepted)
+            //{
+            //    throw new Exception("Data security statement was not accepted");
+            //}
 
             return new ContactInfo(dto.Name, dto.Email, dto.Phone, dto.Comment);
         }

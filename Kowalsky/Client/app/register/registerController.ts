@@ -54,9 +54,7 @@
             }
         }
 
-        showDss = () => {
-            console.log('Accepted');
-        }
+        //showDss = () => { }
 
         private successfullyRegistered = () => {
             
