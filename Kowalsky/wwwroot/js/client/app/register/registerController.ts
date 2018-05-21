@@ -54,8 +54,6 @@ module Home {
             }
         }
 
-        //showDss = () => { }
-
         private successfullyRegistered = () => {
             
         }
