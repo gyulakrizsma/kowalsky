@@ -75,6 +75,14 @@ body .under-line-padding {
 body .odd {
   background: #161616;
 }
+body .modal {
+  color: black;
+}
+body .modal .modal-body {
+  text-align: left;
+  overflow-y: scroll;
+  height: 350px;
+}
 /*OWL-CAROUSEL*/
 .grabbing {
   cursor: url(/images//home/owl-carousel/grabbing.png) 8 8, move;
