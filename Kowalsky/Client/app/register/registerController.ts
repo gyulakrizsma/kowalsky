@@ -54,8 +54,6 @@
             }
         }
 
-        //showDss = () => { }
-
         private successfullyRegistered = () => {
             
         }
