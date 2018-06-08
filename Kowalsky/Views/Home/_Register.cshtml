@@ -10,6 +10,7 @@
         <div class="row kj-form wow fadeIn" data-wow-duration="1.5s">
             <div class="col-md-12">
                 <form role="form"
+                      novalidate
                       class="form-horizontal"
                       id="registerForm"
                       name="vm.registerForm"
@@ -56,7 +57,7 @@
 
                     <div class="row form-group">
                         <div class="col-md-12">
-                            <div class="checkbox" ng-class="{'dss-error': vm.contactInfo.DssAggreementAccepted === undefined}">
+                            <div class="checkbox" ng-class="{'dss-error': vm.InvalidDss}">
                                 <label>
                                     <input type="checkbox"
                                            ng-model="vm.contactInfo.DssAggreementAccepted"
@@ -68,9 +69,17 @@
                         </div>
                     </div>
 
+                    <div class="row" ng-show="vm.HasErrors">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                <span>Az alábbi mezők kitöltése kötelező: Név, E-mail cím, Telefonszám, adatkezelési és adatvédelmi szabályzat elfogadása</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-md-12">
-                            <button class="btn btn-lg kj-submit" ng-disabled="vm.registerForm.$invalid" ng-click="vm.save()">Jelentkezés</button>
+                            <button class="btn btn-lg kj-submit" ng-click="vm.save()">Jelentkezés</button>
                         </div>
                     </div>
                 </form>

@@ -553,7 +553,7 @@ footer ul li .btn-social-icon:hover {
   padding: 10px;
 }
 .section-register .kj-form .checkbox.dss-error {
-  border: 1px solid #e5c41a;
+  border: 1px solid #a94442;
 }
 .section-register .kj-form textarea {
   margin-top: 15px;
@@ -565,15 +565,19 @@ footer ul li .btn-social-icon:hover {
   background-color: #232323;
   color: #c8c8c8;
   border: 1px solid #00ab66;
+  box-shadow: none;
 }
-.section-register .kj-form .ng-dirty.ng-invalid,
-.section-register .kj-form .ng-dirty.error {
-  border-color: #e5c41a !important;
+.section-register .kj-form form .ng-dirty.ng-invalid,
+.section-register .kj-form form .ng-dirty.error {
+  border-color: #a94442 !important;
+}
+.section-register .kj-form form.ng-submitted .ng-invalid,
+.section-register .kj-form form.ng-submitted .ng-dirty.error {
+  border-color: #a94442 !important;
 }
 .section-register .kj-form .alert-kj {
-  background-color: #e5c41a;
+  border: 1px solid #e5c41a;
   color: white;
-  border: none;
 }
 .section-register .kj-form .success-kj {
   background-color: #00ab66;

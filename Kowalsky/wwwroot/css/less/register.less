@@ -38,7 +38,7 @@
             padding: 10px;
 
             &.dss-error {
-                border: 1px solid @kj-yellow;
+                border: 1px solid @kj-error;
             }
         }
 
@@ -53,16 +53,26 @@
             background-color: @kj-bacground-two;
             color: #c8c8c8;
             border: 1px solid @kj-green;
+            box-shadow: none;
         }
 
-        .ng-dirty.ng-invalid, .ng-dirty.error {
-            border-color: @kj-yellow !important;
+        form {
+
+            .ng-dirty.ng-invalid, .ng-dirty.error {
+                border-color: @kj-error !important;
+            }
+
+            &.ng-submitted {
+
+                .ng-invalid, .ng-dirty.error {
+                    border-color: @kj-error !important;
+                }
+            }
         }
 
         .alert-kj {
-            background-color: @kj-yellow;
+            border: 1px solid @kj-yellow;
             color: white;
-            border: none;
         }
 
         .success-kj {

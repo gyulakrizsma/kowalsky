@@ -25,6 +25,11 @@
         get HasErrors() {
             return this.registerForm.$submitted && this.registerForm.$invalid;
         }
+        get InvalidDss() {
+            return this.contactInfo.DssAggreementAccepted === undefined ||
+                (this.registerForm.$submitted && !this.contactInfo.DssAggreementAccepted);
+        }
+
 
         save = () => {
             this.registerForm.$setSubmitted();
