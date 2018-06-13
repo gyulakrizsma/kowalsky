@@ -618,4 +618,8 @@ footer ul li .btn-social-icon:hover {
     margin-top: 15px;
     margin-bottom: 0px;
   }
+  .section-register .kj-form .checkbox {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 }
