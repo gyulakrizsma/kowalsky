@@ -1,6 +1,19 @@
-FROM microsoft/aspnetcore:2.0
-ARG source
+FROM microsoft/aspnetcore:2.0 AS base
 WORKDIR /app
-EXPOSE 80 443
-COPY ${source:-obj/Docker/publish} .
+EXPOSE 80
+
+FROM microsoft/aspnetcore-build:2.0 AS build
+WORKDIR /src
+COPY Kowalsky/Kowalsky.csproj Kowalsky/
+RUN dotnet restore Kowalsky/Kowalsky.csproj
+COPY . .
+WORKDIR /src/Kowalsky
+RUN dotnet build Kowalsky.csproj -c Release -o /app
+
+FROM build AS publish
+RUN dotnet publish Kowalsky.csproj -c Release -o /app
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "Kowalsky.dll"]

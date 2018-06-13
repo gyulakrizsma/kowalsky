@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   kowalsky:
-    image: kowalsky
+    image: ${DOCKER_REGISTRY}kowalsky
     build:
-      context: Kowalsky
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: Kowalsky/Dockerfile
