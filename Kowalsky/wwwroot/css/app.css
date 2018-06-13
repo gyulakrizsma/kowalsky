@@ -537,9 +537,12 @@ footer ul li .btn-social-icon:hover {
 .section-register .kj-form {
   padding-top: 50px;
 }
+.section-register .kj-form .form-group {
+  margin-bottom: 0px;
+}
 .section-register .kj-form input[type=text],
 .section-register .kj-form input[type=email] {
-  margin: 15px 0;
+  margin: 10px 0;
   height: 45px;
 }
 .section-register .kj-form input[type=checkbox] {
@@ -551,12 +554,14 @@ footer ul li .btn-social-icon:hover {
 }
 .section-register .kj-form .checkbox {
   padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 .section-register .kj-form .checkbox.dss-error {
   border: 1px solid #a94442;
 }
 .section-register .kj-form textarea {
-  margin-top: 15px;
+  margin: 10px 0px;
   height: 150px;
 }
 .section-register .kj-form input[type=text],
@@ -608,10 +613,7 @@ footer ul li .btn-social-icon:hover {
   background: #0c794d;
   color: white;
 }
-@media only screen and (max-width: 768px) {
-  .section-register .kj-form .form-group {
-    margin-bottom: 0px;
-  }
+@media only screen and (max-width: 992px) {
   .section-register .kj-form input[type=text],
   .section-register .kj-form input[type=email],
   .section-register .kj-form textarea {
@@ -620,6 +622,6 @@ footer ul li .btn-social-icon:hover {
   }
   .section-register .kj-form .checkbox {
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 }
