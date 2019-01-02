@@ -4,17 +4,19 @@ namespace Kowalsky.Models
 {
     public class PriceModel
     {
-        public PriceModel(int mainPrice, IReadOnlyList<Price> theoryPrices, IReadOnlyList<Price> prices)
+        public PriceModel(int tariff, IReadOnlyList<Price> theoryPrices, IReadOnlyList<Price> prices)
         {
-            MainPrice = mainPrice;
+            Tariff = tariff;
             TheoryPrices = theoryPrices;
             Prices = prices;
         }
 
-        public int MainPrice { get; }
+        public int Tariff { get; }
 
         public IReadOnlyList<Price> TheoryPrices { get; }
 
         public IReadOnlyList<Price> Prices { get; }
+
+        public int MainPrice => 30 * Tariff;
     }
 }

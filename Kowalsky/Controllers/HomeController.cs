@@ -7,11 +7,10 @@ namespace Kowalsky.Controllers
     {
         public IActionResult Index()
         {
-            var priceModel = new PriceModel(111000,
+            var priceModel = new PriceModel(4500,
                 new[]
                 {
-                    new Price(30000, "Tantermi képzés", "A tananyagot egy szakoktató előadásai során sajátíthatod el, mely előadásokon kötelező megjelenned. Tantermi képzést legalább 5 fő egyidejű jelentkezése esetén indítunk."),
-                    new Price(36000, "E-Learning", "Az elméleti vizsgához szükséges tananyaghoz, a bejelentkezéstől számított 24 órán belül, iskolánk elektronikus hozzáférést biztosít számodra, melyet otthon is megtanulhatsz, idődet szabadon beosztva.")
+                    new Price(30000, "E-Learning", "Az elméleti vizsgához szükséges tananyaghoz, a bejelentkezéstől számított 24 órán belül, iskolánk elektronikus hozzáférést biztosít számodra, melyet otthon is megtanulhatsz, idődet szabadon beosztva.")
                 },
                 new[]
                 {
@@ -28,7 +27,7 @@ namespace Kowalsky.Controllers
                 new Comment("Legjobb suli, érdekesek az órái, vezetői oktatása nyugis. Köszönjük K. Gábor", "Trudics Kriszta", "")
             };
 
-            var model = new HomeOverviewViewModel(99000, priceModel, comments);
+            var model = new HomeOverviewViewModel(priceModel, comments);
 
             return View(model);
         }
