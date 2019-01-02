@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.Partial("_Home", Model.MainPrice)
-    
+@Html.Partial("_Home")
+
 <div class="odd">
-    @Html.Partial("_Prices", Model.PriceModel)  
+    @Html.Partial("_Prices", Model.PriceModel)
 </div>
 
 @Html.Partial("_Comments", Model.Comments)
