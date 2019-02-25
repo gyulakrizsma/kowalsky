@@ -18,7 +18,7 @@
         <div class="row">
             <button>
                 <i class="glyphicon glyphicon-education"></i>
-                <span>@Model.MainPrice Ft</span>
+                <span>@(Model.Tariff * 30) Ft</span>
             </button>
         </div>
         
@@ -27,22 +27,17 @@
         </div>
 
         <div class="row margin-lg">
-            
-            @foreach (var item in Model.TheoryPrices)
-            {
-                <div class="col-md-12 col-sm-12">
-                    <div class="row price-box wow fadeIn" data-wow-duration="1.5s">
-                        <div class="col-md-12">
-                            <h2>@item.Amount Ft</h2>
-                            <h4>@item.Title</h4>
-                            <span>
-                                @item.Description
-                            </span>
-                        </div>
+            <div class="col-md-12 col-sm-12">
+                <div class="row price-box wow fadeIn" data-wow-duration="1.5s">
+                    <div class="col-md-12">
+                        <h2>@Model.TheoryPrice.Amount Ft</h2>
+                        <h4>@Model.TheoryPrice.Title</h4>
+                        <span>
+                            @Model.TheoryPrice.Description
+                        </span>
                     </div>
                 </div>
-            }
-
+            </div>
         </div>
         
         <div class="row margin-lg">

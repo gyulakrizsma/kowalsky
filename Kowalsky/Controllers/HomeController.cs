@@ -8,10 +8,9 @@ namespace Kowalsky.Controllers
         public IActionResult Index()
         {
             var priceModel = new PriceModel(4500,
-                new[]
-                {
-                    new Price(30000, "E-Learning", "Az elméleti vizsgához szükséges tananyaghoz, a bejelentkezéstől számított 24 órán belül, iskolánk elektronikus hozzáférést biztosít számodra, melyet otthon is megtanulhatsz, idődet szabadon beosztva.")
-                },
+                new Price(30000, "E-Learning",
+                    "Az elméleti vizsgához szükséges tananyaghoz, a bejelentkezéstől számított 24 órán belül, iskolánk elektronikus hozzáférést biztosít számodra, melyet otthon is megtanulhatsz, idődet szabadon beosztva.")
+                ,
                 new[]
                 {
                     new Price(7000, "Orvosi alkalmassági vizsgálat", ""),
