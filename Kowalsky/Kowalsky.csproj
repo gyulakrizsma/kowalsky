@@ -5,33 +5,18 @@
     <PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
     <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Remove="wwwroot\js\client\app\app.types.js" />
-    <Content Remove="wwwroot\js\client\app\app.types.js.map" />
-    <Content Remove="wwwroot\js\client\app\app.types.ts" />
-    <Content Remove="wwwroot\js\client\app\register\register.module.js" />
-    <Content Remove="wwwroot\js\client\app\register\register.module.js.map" />
-    <Content Remove="wwwroot\js\client\app\register\register.module.ts" />
-    <Content Remove="wwwroot\js\client\app\register\register.services.js" />
-    <Content Remove="wwwroot\js\client\app\register\register.services.js.map" />
-    <Content Remove="wwwroot\js\client\app\register\register.services.ts" />
-    <Content Remove="wwwroot\js\client\app\register\registerController.js" />
-    <Content Remove="wwwroot\js\client\app\register\registerController.js.map" />
-    <Content Remove="wwwroot\js\client\app\register\registerController.ts" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Google.Apis.Sheets.v4" Version="1.30.0.1047" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="RavenSharp.Core" Version="1.0.0-beta-1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\fonts\" />
-    <Folder Include="wwwroot\js\client\app\" />
-    <Folder Include="wwwroot\js\client\app\register\" />
   </ItemGroup>
 
 </Project>
