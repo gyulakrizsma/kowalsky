@@ -13,7 +13,7 @@ namespace Kowalsky.Controllers
                 ,
                 new[]
                 {
-                    new Price(7000, "Orvosi alkalmassági vizsgálat", ""),
+                    new Price(7200, "Orvosi alkalmassági vizsgálat", ""),
                     new Price(11000, "Egészségügyi tanfolyam", ""),
                     new Price(8200, "Egészségügyi vizsgadíj", ""),
                     new Price(4600, "Elméleti vizsgadíj (kresz teszt)", ""),
